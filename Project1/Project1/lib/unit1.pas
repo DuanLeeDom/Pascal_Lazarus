@@ -73,7 +73,9 @@ var
   Form1: TForm1;
   valor1: real;
   valor2: real;
+  valorant: real;
   funcao: integer;
+  funcaoant: integer;
 
 implementation
 
@@ -189,9 +191,16 @@ end;
 
 procedure TForm1.multiplicacaoClick(Sender: TObject);
 begin
+  if funcaoant = 0 then funcaoant := funcao;
+  funcao := 3;
+  if funcaoant <> funcao then
+  begin
+    if funcaoant = 1 then valor1 := valor1 + StrToFloat (visor.Text);
+    funcaoant := 3;
+  end
+  else
   valor1 := StrToFloat(visor.Text);
   visor.Text := '';
-  funcao := 3;
 end;
 
 procedure TForm1.bt2Click(Sender: TObject);
@@ -214,6 +223,7 @@ end;
 procedure TForm1.delClick(Sender: TObject);
 begin
   visor.Text:='';
+
 end;
 
 procedure TForm1.igualClick(Sender: TObject);
