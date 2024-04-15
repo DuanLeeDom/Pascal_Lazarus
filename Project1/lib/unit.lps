@@ -8,7 +8,6 @@
         <Filename Value="unit.lpr"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="unity"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
         <CursorPos X="8" Y="13"/>
         <UsageCount Value="20"/>
@@ -21,21 +20,14 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Calculadora"/>
-        <CursorPos X="32" Y="2"/>
+        <IsVisibleTab Value="True"/>
+        <CursorPos X="66"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
     </Units>
     <JumpHistory HistoryIndex="29">
-      <Position>
-        <Filename Value="calculadora.pas"/>
-        <Caret Line="16" Column="99"/>
-      </Position>
-      <Position>
-        <Filename Value="calculadora.pas"/>
-        <Caret Line="17" Column="99"/>
-      </Position>
       <Position>
         <Filename Value="calculadora.pas"/>
         <Caret Line="18" Column="99"/>
@@ -146,6 +138,14 @@
       <Position>
         <Filename Value="unit.lpr"/>
         <Caret Line="18" Column="38" TopLine="4"/>
+      </Position>
+      <Position>
+        <Filename Value="calculadora.pas"/>
+        <Caret Line="2" Column="32"/>
+      </Position>
+      <Position>
+        <Filename Value="calculadora.pas"/>
+        <Caret Line="5" Column="18"/>
       </Position>
     </JumpHistory>
     <RunParams>
