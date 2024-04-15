@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <Version Value="12"/>
+    <BuildModes Active="Default"/>
+    <Units>
+      <Unit>
+        <Filename Value="unit.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="unity"/>
+        <EditorIndex Value="1"/>
+        <CursorPos X="14"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="calculadora.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="32"/>
+        <CursorPos X="8" Y="42"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+    </Units>
+    <JumpHistory HistoryIndex="24">
+      <Position>
+        <Filename Value="calculadora.pas"/>
+        <Caret Line="12" Column="99"/>
+      </Position>
+      <Position>
+        <Filename Value="calculadora.pas"/>
+        <Caret Line="16" Column="99"/>
+      </Position>
+      <Position>
+        <Filename Value="calculadora.pas"/>
+        <Caret Line="15" Column="99"/>
+      </Position>
+      <Position>
+        <Filename Value="calculadora.pas"/>
+        <Caret Line="16" Column="99"/>
+      </Position>
+      <Position>
+        <Filename Value="calculadora.pas"/>
+        <Caret Line="17" Column="99"/>
+      </Position>
+      <Position>
+        <Filename Value="calculadora.pas"/>
+        <Caret Line="18" Column="99"/>
+      </Position>
+      <Position>
+        <Filename Value="calculadora.pas"/>
+        <Caret Line="19" Column="99" TopLine="2"/>
+      </Position>
+      <Position>
+        <Filename Value="calculadora.pas"/>
+        <Caret Line="16" Column="71" TopLine="3"/>
+      </Position>
+      <Position>
+        <Filename Value="calculadora.pas"/>
+        <Caret Line="17" Column="71" TopLine="3"/>
+      </Position>
+      <Position>
+        <Filename Value="calculadora.pas"/>
+        <Caret Line="16" Column="71" TopLine="3"/>
+      </Position>
+      <Position>
+        <Filename Value="calculadora.pas"/>
+        <Caret Line="17" Column="71" TopLine="3"/>
+      </Position>
+      <Position>
+        <Filename Value="calculadora.pas"/>
+        <Caret Line="22" Column="71" TopLine="5"/>
+      </Position>
+      <Position>
+        <Filename Value="calculadora.pas"/>
+        <Caret Line="27" Column="72" TopLine="10"/>
+      </Position>
+      <Position>
+        <Filename Value="calculadora.pas"/>
+        <Caret Line="32" Column="72" TopLine="16"/>
+      </Position>
+      <Position>
+        <Filename Value="calculadora.pas"/>
+        <Caret Line="31" Column="72" TopLine="16"/>
+      </Position>
+      <Position>
+        <Filename Value="calculadora.pas"/>
+        <Caret TopLine="12"/>
+      </Position>
+      <Position>
+        <Filename Value="calculadora.pas"/>
+      </Position>
+      <Position>
+        <Filename Value="unit.lpr"/>
+        <Caret Line="13" Column="19" TopLine="4"/>
+      </Position>
+      <Position>
+        <Filename Value="unit.lpr"/>
+        <Caret Column="20"/>
+      </Position>
+      <Position>
+        <Filename Value="unit.lpr"/>
+        <Caret Line="13" Column="21" TopLine="8"/>
+      </Position>
+      <Position>
+        <Filename Value="unit.lpr"/>
+        <Caret Column="13"/>
+      </Position>
+      <Position>
+        <Filename Value="calculadora.pas"/>
+        <Caret Line="40" Column="26" TopLine="31"/>
+      </Position>
+      <Position>
+        <Filename Value="unit.lpr"/>
+        <Caret Column="14"/>
+      </Position>
+      <Position>
+        <Filename Value="calculadora.pas"/>
+        <Caret Line="40" Column="24" TopLine="32"/>
+      </Position>
+      <Position>
+        <Filename Value="calculadora.pas"/>
+        <Caret Line="44" Column="47" TopLine="32"/>
+      </Position>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>
