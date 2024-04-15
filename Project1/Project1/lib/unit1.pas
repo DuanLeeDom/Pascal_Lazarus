@@ -102,9 +102,16 @@ end;
 
 procedure TForm1.maisClick(Sender: TObject);
 begin
-  valor1 := StrTofloat(visor.Text);
+  if funcaoant = 0 then funcaoant := funcao;
+  funcao := 3;
+  if funcaoant <> funcao then
+  begin
+    if funcaoant = 1 then valor1 := valor1 + StrToFloat (visor.Text);
+    funcaoant := 3;
+  end
+  else
+  valor1 := StrToFloat(visor.Text);
   visor.Text := '';
-  funcao := 1;
 end;
 
 procedure TForm1.bt7Click(Sender: TObject);
@@ -222,7 +229,7 @@ end;
 
 procedure TForm1.delClick(Sender: TObject);
 begin
-  visor.Text:='';
+  visor.Text := '';
 
 end;
 

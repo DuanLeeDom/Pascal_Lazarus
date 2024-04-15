@@ -222,8 +222,8 @@ end;
 
 procedure TForm1.delClick(Sender: TObject);
 begin
-  visor.Text:='';
-  result := '';
+  visor.Text := '';
+
 end;
 
 procedure TForm1.igualClick(Sender: TObject);
