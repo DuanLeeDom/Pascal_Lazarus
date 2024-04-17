@@ -5,7 +5,8 @@ unit Unit1;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, Menus;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, Menus,
+  ActnList;
 
 type
 
@@ -46,6 +47,7 @@ type
     procedure moddClick(Sender: TObject);
     procedure piClick(Sender: TObject);
     procedure raizClick(Sender: TObject);
+    procedure visorChange(Sender: TObject);
     procedure x_2Click(Sender: TObject);
     procedure multiplicacaoClick(Sender: TObject);
     procedure bt1Click(Sender: TObject);
@@ -89,31 +91,19 @@ begin
 end;
 
 procedure TForm1.porcentagemClick(Sender: TObject);
-begin
-  if funcao <> 0 then
+var
+   val: Extended;
   begin
-     if funcao = 1 then
-        valor1 := valor1 + StrToFloat(visor.Text)
-        else if funcao = 2 then
-             valor1 := valor1 - StrToFloat(visor.Text)
-             else if funcao = 3 then
-                  valor1 := valor1 * StrToFloat(visor.Text)
-                  else if funcao = 4 then
-                       valor1 := valor1 / StrToFloat(visor.Text);
-  end
-  else
-  begin
-      valor1 := StrToFloat(visor.Text);
-  end;
-  funcao := 5;
-  visor.text := '';
+       val := (StrToFloat(visor.Text) / 100);
+       visor.text := FloatToStr(val);
+
+  //funcao := 5;
+  //visor.text := '';
 end;
 
 procedure TForm1.virgulaClick(Sender: TObject);
 begin
-  valor1 := StrToFloat(visor.Text);
-  visor.Text := '';
-  funcao := 2;
+  visor.Text := visor.Text + '.';
 end;
 
 procedure TForm1.maisClick(Sender: TObject);
@@ -121,7 +111,7 @@ begin
   if funcao <> 0 then
   begin
       if funcao = 1 then
-       valor1 := valor1 + StrToFloat(visor.Text)
+       valor1 := valor1 + StrToFloat(visor.txt)
        else if funcao = 2 then
             valor1 := valor1 - StrToFloat(visor.Text)
             else if funcao = 3 then
@@ -233,6 +223,11 @@ begin
 
 end;
 
+procedure TForm1.visorChange(Sender: TObject);
+begin
+
+end;
+
 procedure TForm1.x_2Click(Sender: TObject);
 begin
 
@@ -299,6 +294,7 @@ end;
 procedure TForm1.igualClick(Sender: TObject);
 var
   result: real;
+  val: Extended;
 begin
   valor2 := StrToFloat(visor.Text);
   case (funcao) of
@@ -329,11 +325,6 @@ begin
                SHowMessage('Divisão por zero!!');
                visor.Text := 'ERRO';
           end
-  end;
-  5:
-  begin
-       result := (valor1 * 100) / valor2;
-       visor.text := FloatToStr(result)
   end;
   end;
   funcao := 0;
