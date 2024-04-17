@@ -42,6 +42,7 @@ type
     procedure bt6Click(Sender: TObject);
     procedure abre_parentesesClick(Sender: TObject);
     procedure fecha_parentesesClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
     procedure moddClick(Sender: TObject);
     procedure piClick(Sender: TObject);
     procedure raizClick(Sender: TObject);
@@ -73,7 +74,6 @@ var
   Form1: TForm1;
   valor1: real;
   valor2: real;
-  valorant: real;
   funcao: integer;
   funcaoant: integer;
 
@@ -102,16 +102,9 @@ end;
 
 procedure TForm1.maisClick(Sender: TObject);
 begin
-  if funcaoant = 0 then funcaoant := funcao;
-  funcao := 3;
-  if funcaoant <> funcao then
-  begin
-    if funcaoant = 1 then valor1 := valor1 + StrToFloat (visor.Text);
-    funcaoant := 3;
-  end
-  else
-  valor1 := StrToFloat(visor.Text);
+  valor1 := StrTofloat(visor.Text);
   visor.Text := '';
+  funcao := 1;
 end;
 
 procedure TForm1.bt7Click(Sender: TObject);
@@ -176,6 +169,11 @@ begin
 
 end;
 
+procedure TForm1.FormShow(Sender: TObject);
+begin
+  funcao := 0;
+end;
+
 procedure TForm1.moddClick(Sender: TObject);
 begin
 
@@ -198,15 +196,22 @@ end;
 
 procedure TForm1.multiplicacaoClick(Sender: TObject);
 begin
-  if funcaoant = 0 then funcaoant := funcao;
-  funcao := 3;
-  if funcaoant <> funcao then
+  if funcao <> 0 then
   begin
-    if funcaoant = 1 then valor1 := valor1 + StrToFloat (visor.Text);
-    funcaoant := 3;
+       if funcao = 1 then
+          valor1 := valor1 + StrToFloat(visor.Text)
+       else if funcao = 2 then
+            valor1 := valor1 - StrToFloat(visor.Text)
+            else if funcao = 3 then
+                 valor1 := valor1 * StrToFloat(visor.Text)
+                 else if funcao = 4 then
+                      valor1 := valor1 / StrToFloat(visor.Text);
   end
   else
-  valor1 := StrToFloat(visor.Text);
+  begin
+       valor1 := StrToFloat(visor.Text);
+  end;
+  funcao := 3;
   visor.Text := '';
 end;
 
@@ -229,8 +234,7 @@ end;
 
 procedure TForm1.delClick(Sender: TObject);
 begin
-  visor.Text := '';
-
+  visor.Text:='';
 end;
 
 procedure TForm1.igualClick(Sender: TObject);
@@ -251,8 +255,8 @@ begin
   end;
   3:
   begin
-      soma := valor1 * valor2;
-      visor.text := FloatToStr(soma);
+       soma := valor1 * valor2;
+       visor.text := FloatToStr(soma);
   end;
   4:
   begin
@@ -268,6 +272,7 @@ begin
           end
       end
   end;
+  funcao := 0;
 end; //finaliza o case
 end.
 

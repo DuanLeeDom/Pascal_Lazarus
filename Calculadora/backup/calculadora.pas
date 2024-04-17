@@ -1,4 +1,4 @@
-unit Calculadora;
+unit calculadora;
 
 {$mode objfpc}{$H+}
 
@@ -37,6 +37,10 @@ type
     Button8: TButton;
     Button9: TButton;
   private
+  procedure TForm1.umClick(Sender: TObject);
+  begin
+       visor.Text := visor.Text + (Sender as TSpeedButton).Caption
+  end;
 
   public
 
@@ -46,7 +50,7 @@ var
   Form1: TForm1;
   valor1: real;
   valor2: real;
-  funcao : integer;
+  funcao: integer;
 
 implementation
 
