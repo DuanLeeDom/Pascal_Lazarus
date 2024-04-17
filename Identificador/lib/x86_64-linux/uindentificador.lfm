@@ -1,0 +1,55 @@
+object ftnPrincipal: TftnPrincipal
+  Left = 978
+  Height = 240
+  Top = 214
+  Width = 320
+  Caption = 'INDENTIFICADOR'
+  ClientHeight = 240
+  ClientWidth = 320
+  LCLVersion = '2.2.0.4'
+  object Verificar: TButton
+    Left = 117
+    Height = 25
+    Top = 144
+    Width = 75
+    Caption = 'Verificar'
+    OnClick = VerificarClick
+    TabOrder = 0
+  end
+  object ind_2: TEdit
+    Left = 112
+    Height = 28
+    Top = 64
+    Width = 80
+    TabOrder = 1
+  end
+  object ind_1: TEdit
+    Left = 112
+    Height = 28
+    Top = 32
+    Width = 80
+    TabOrder = 2
+  end
+  object Label1: TLabel
+    Left = 90
+    Height = 16
+    Top = 8
+    Width = 124
+    Caption = 'Coloque os numeros'
+    OnClick = Label1Click
+  end
+  object ind_3: TEdit
+    Left = 112
+    Height = 28
+    Top = 96
+    Width = 80
+    TabOrder = 3
+  end
+  object ind: TLabel
+    Left = 55
+    Height = 16
+    Top = 192
+    Width = 208
+    Caption = 'inderntificar = num 1 num 2 num 3'
+  end
+end
