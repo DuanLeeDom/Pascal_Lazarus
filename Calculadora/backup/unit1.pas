@@ -90,7 +90,23 @@ end;
 
 procedure TForm1.porcentagemClick(Sender: TObject);
 begin
-
+  if funcao <> 0 then
+  begin
+     if funcao = 1 then
+        valor1 := valor1 + StrToFloat(visor.Text)
+        else if funcao = 2 then
+             valor1 := valor1 - StrToFloat(visor.Text)
+             else if funcao = 3 then
+                  valor1 := valor1 * StrToFloat(visor.Text)
+                  else if funcao = 4 then
+                       valor1 := valor1 / StrToFloat(visor.Text);
+  end
+  else
+  begin
+      valor1 := StrToFloat(visor.Text);
+  end;
+  funcao := 5;
+  visor.text := '';
 end;
 
 procedure TForm1.virgulaClick(Sender: TObject);
@@ -102,9 +118,23 @@ end;
 
 procedure TForm1.maisClick(Sender: TObject);
 begin
-  valor1 := StrTofloat(visor.Text);
-  visor.Text := '';
+  if funcao <> 0 then
+  begin
+      if funcao = 1 then
+       valor1 := valor1 + StrToFloat(visor.Text)
+       else if funcao = 2 then
+            valor1 := valor1 - StrToFloat(visor.Text)
+            else if funcao = 3 then
+                 valor1 := valor1 * StrToFloat(visor.Text)
+                 else if funcao = 4 then
+                      valor1 := valor1 / StrToFloat(visor.Text);
+  end
+  else
+  begin
+       valor1 := StrTofloat(visor.Text);
+  end;
   funcao := 1;
+  visor.Text := '';
 end;
 
 procedure TForm1.bt7Click(Sender: TObject);
@@ -124,9 +154,23 @@ end;
 
 procedure TForm1.divisaoClick(Sender: TObject);
 begin
-  valor1 := StrTofloat(visor.Text);
-  visor.Text := '';
+  if funcao <> 0 then
+  begin
+      if funcao = 1 then
+         valor1 := valor1 + StrToFloat(visor.Text)
+         else if funcao = 2 then
+              valor1 := valor1 - StrToFloat(visor.Text)
+              else if funcao = 3 then
+                   valor1 := valor1 * StrToFloat(visor.Text)
+                   else if funcao = 4 then
+                        valor1 := valor1 / StrToFloat(visor.Text);
+  end
+  else
+  begin
+       valor1 := StrToFloat(visor.Text);
+  end;
   funcao := 4;
+  visor.Text := '';
 end;
 
 procedure TForm1.Edit1Change(Sender: TObject);
@@ -227,50 +271,70 @@ end;
 
 procedure TForm1.menosClick(Sender: TObject);
 begin
-  valor1 := StrToFloat(visor.Text);
-  visor.text := '';
+  if funcao <> 0 then
+  begin
+       if funcao = 1 then
+          valor1 := valor1 + StrToFloat(visor.Text)
+       else if funcao = 2 then
+            valor1 := valor1 - StrToFloat(visor.Text)
+            else if funcao = 3 then
+                 valor1 := valor1 * StrToFloat(visor.Text)
+                 else if funcao = 4 then
+                      valor1 := valor1 / StrToFloat(visor.Text);
+  end
+  else
+  begin
+       valor1 := StrToFloat(visor.Text);
+  end;
   funcao := 2;
+  visor.text := '';
 end;
 
 procedure TForm1.delClick(Sender: TObject);
 begin
   visor.Text:='';
+  funcao := 0;
 end;
 
 procedure TForm1.igualClick(Sender: TObject);
 var
-  soma: real;
+  result: real;
 begin
   valor2 := StrToFloat(visor.Text);
   case (funcao) of
   1:
   begin
-      soma := valor1 + valor2;
-      visor.text := FloatToStr(soma);
+      result := valor1 + valor2;
+      visor.text := FloatToStr(result);
   end;
   2:
   begin
-      soma := valor1 - valor2;
-      visor.text := FloatToStr(soma);
+      result := valor1 - valor2;
+      visor.text := FloatToStr(result);
   end;
   3:
   begin
-       soma := valor1 * valor2;
-       visor.text := FloatToStr(soma);
+       result := valor1 * valor2;
+       visor.text := FloatToStr(result);
   end;
   4:
   begin
       if(valor2<>0)then
        begin
-         soma := valor1 / valor2;
-         visor.text := FloatToStr(soma);
+         result := valor1 / valor2;
+         visor.text := FloatToStr(result);
        end
       else
           begin
                SHowMessage('Divisão por zero!!');
                visor.Text := 'ERRO';
           end
-      end
+  end;
+  5:
+  begin
+       result := (valor1 * 100) / valor2;
+       visor.text := FloatToStr(result)
+  end;
   end;
   funcao := 0;
 end; //finaliza o case
