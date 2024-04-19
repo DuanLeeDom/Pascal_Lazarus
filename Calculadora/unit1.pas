@@ -219,8 +219,11 @@ begin
 end;
 
 procedure TForm1.raizClick(Sender: TObject);
+var
+   resultadoRaiz: double;
 begin
-
+     resultadoRaiz := Sqrt(StrToFloat(visor.Text));
+     visor.Text := FloatToStr(resultadoRaiz);
 end;
 
 procedure TForm1.visorChange(Sender: TObject);
@@ -294,7 +297,6 @@ end;
 procedure TForm1.igualClick(Sender: TObject);
 var
   result: real;
-  val: Extended;
 begin
   valor2 := StrToFloat(visor.Text);
   case (funcao) of

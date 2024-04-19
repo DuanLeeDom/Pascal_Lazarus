@@ -111,7 +111,7 @@ begin
   if funcao <> 0 then
   begin
       if funcao = 1 then
-       valor1 := valor1 + StrToFloat(visor.txt)
+       valor1 := valor1 + StrToFloat(visor.Text)
        else if funcao = 2 then
             valor1 := valor1 - StrToFloat(visor.Text)
             else if funcao = 3 then
@@ -219,8 +219,10 @@ begin
 end;
 
 procedure TForm1.raizClick(Sender: TObject);
+var
+   resultadoRaiz: double;
 begin
-
+     resultadoRaiz := (StrToFloat(visor.Text)
 end;
 
 procedure TForm1.visorChange(Sender: TObject);
@@ -294,7 +296,6 @@ end;
 procedure TForm1.igualClick(Sender: TObject);
 var
   result: real;
-  val: Extended;
 begin
   valor2 := StrToFloat(visor.Text);
   case (funcao) of

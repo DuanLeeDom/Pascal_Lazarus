@@ -2,5 +2,4 @@
 <CONFIG>
   <Compiler Value="/usr/bin/fpc" Date="1649687632"/>
   <Params Value=" -MObjFPC -Scghi -Cg -O1 -gw3 -gl -l -vewnhibq -Fi/home/ststech/Documentos/Calculadora/lib/x86_64-linux -Fu/home/ststech/.lazarus/lib/units/x86_64-linux/gtk2 -Fu/home/ststech/.lazarus/lib/LCLBase/units/x86_64-linux -Fu/home/ststech/.lazarus/lib/freetypelaz/lib/x86_64-linux -Fu/usr/lib/lazarus/2.2.0/components/lazutils/lib/x86_64-linux -Fu/usr/lib/lazarus/2.2.0/packager/units/x86_64-linux -Fu/home/ststech/Documentos/Calculadora/ -FU/home/ststech/Documentos/Calculadora/lib/x86_64-linux/ -FE/home/ststech/Documentos/Calculadora/ -o/home/ststech/Documentos/Calculadora/Calculadora -dLCL -dLCLgtk2 Calculadora.lpr"/>
-  <Complete Value="False"/>
 </CONFIG>
