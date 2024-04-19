@@ -1,7 +1,7 @@
 object frmAula003: TfrmAula003
-  Left = 878
+  Left = 963
   Height = 240
-  Top = 203
+  Top = 245
   Width = 320
   Caption = 'Aula 003- Variaveis'
   ClientHeight = 240
