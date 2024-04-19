@@ -18,7 +18,7 @@ object frmPrincipal: TfrmPrincipal
   end
   object Memo1: TMemo
     Left = 8
-    Height = 114
+    Height = 48
     Top = 48
     Width = 304
     OnChange = Memo1Change
@@ -37,5 +37,13 @@ object frmPrincipal: TfrmPrincipal
     Top = 8
     Width = 208
     TabOrder = 2
+  end
+  object Memo2: TMemo
+    Left = 8
+    Height = 48
+    Top = 112
+    Width = 304
+    OnChange = Memo1Change
+    TabOrder = 3
   end
 end
