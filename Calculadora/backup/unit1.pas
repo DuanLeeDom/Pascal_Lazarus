@@ -214,15 +214,19 @@ begin
 end;
 
 procedure TForm1.piClick(Sender: TObject);
+var
+   resultado: Extended;
 begin
-
+  resultado := '3.14';
+  visor.Text := FloatToStr(resultado);
 end;
 
 procedure TForm1.raizClick(Sender: TObject);
 var
    resultadoRaiz: double;
 begin
-     resultadoRaiz := (StrToFloat(visor.Text)
+     resultadoRaiz := Sqrt(StrToFloat(visor.Text));
+     visor.Text := FloatToStr(resultadoRaiz);
 end;
 
 procedure TForm1.visorChange(Sender: TObject);
@@ -231,8 +235,11 @@ begin
 end;
 
 procedure TForm1.x_2Click(Sender: TObject);
+var
+   aoquadrado: real;
 begin
-
+     aoquadrado := Sqr(StrToFloat(visor.Text));
+     visor.Text := FloatToStr(aoquadrado);
 end;
 
 procedure TForm1.multiplicacaoClick(Sender: TObject);
