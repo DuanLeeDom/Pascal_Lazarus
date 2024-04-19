@@ -1,0 +1,41 @@
+object frmPrincipal: TfrmPrincipal
+  Left = 990
+  Height = 240
+  Top = 234
+  Width = 320
+  Caption = 'Aula 004'
+  ClientHeight = 240
+  ClientWidth = 320
+  LCLVersion = '2.2.0.4'
+  object btnProcessa: TButton
+    Left = 112
+    Height = 51
+    Top = 176
+    Width = 102
+    Caption = 'Processa'
+    OnClick = btnProcessaClick
+    TabOrder = 0
+  end
+  object Memo1: TMemo
+    Left = 8
+    Height = 114
+    Top = 48
+    Width = 304
+    OnChange = Memo1Change
+    TabOrder = 1
+  end
+  object Label1: TLabel
+    Left = 8
+    Height = 16
+    Top = 16
+    Width = 90
+    Caption = 'informe a data:'
+  end
+  object edtDATA: TEdit
+    Left = 104
+    Height = 28
+    Top = 8
+    Width = 208
+    TabOrder = 2
+  end
+end
