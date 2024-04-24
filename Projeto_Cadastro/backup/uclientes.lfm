@@ -1,7 +1,7 @@
 object FRMclientes: TFRMclientes
-  Left = 746
+  Left = 730
   Height = 338
-  Top = 161
+  Top = 157
   Width = 593
   Caption = 'Cadastro de Clientes'
   ClientHeight = 338

@@ -56,6 +56,8 @@ uses uDM;
 { TFRMclientes }
 
 procedure TFRMclientes.confirmarClick(Sender: TObject);
+var
+  ultimoID: Integer;
 begin
      if TDnome.Text = '' then
      begin
@@ -85,15 +87,30 @@ begin
           exit;
      end;
 
-     DM.ZQclientes.Close;
-     DM.ZQclientes.SQL.Clear;
-     DM.ZQclientes.SQL.Add('insert into cliente (nome, endereco, email, telefone)');
-     DM.ZQclientes.SQL.Add('values (:nome, :endereco, :email, :telefone)');
-     DM.ZQclientes.ParamByName('nome').AsString := TDnome.Text;
-     DM.ZQclientes.ParamByName('endereco').AsString := TDendereco.Text;
-     DM.ZQclientes.ParamByName('email').AsString := TDemail.Text;
-     DM.ZQclientes.ParamByName('telefone').AsString := TDtelefone.Text;
-     DM.ZQclientes.ExecSQL;
+     if MessageDlg('Tem certeza que deseja criar uma nova conta?', mtconfirmation,[mbyes,mbno],0)= mryes then
+     begin
+          if MessageDlg('As informações estão corretas?', mtconfirmation,[mbyes,mbno],0)= mryes then
+          begin
+             DM.ZQclientes.SQL.Text := 'SELECT MAX(codigo) FROM cliente';
+             DM.ZQclientes.Open;
+             if not DM.ZQclientes.IsEmpty then
+             begin
+                  ultimoID := DM.ZQclientes.Fields[0].AsInteger;
+                  ShowMessage('O último ID inserido foi: ' + IntToStr(ultimoID));
+             end
+             else
+              ShowMessage('Não há IDs inseridos.');
+              DM.ZQclientes.Close;
+              DM.ZQclientes.Close;
+              DM.ZQclientes.SQL.Clear;
+              DM.ZQclientes.SQL.Add('insert into cliente (nome, endereco, email, telefone)');
+              DM.ZQclientes.SQL.Add('values (:nome, :endereco, :email, :telefone)');
+              DM.ZQclientes.ParamByName('nome').AsString := TDnome.Text;
+              DM.ZQclientes.ParamByName('endereco').AsString := TDendereco.Text;
+              DM.ZQclientes.ParamByName('email').AsString := TDemail.Text;
+              DM.ZQclientes.ParamByName('telefone').AsString := TDtelefone.Text;
+              DM.ZQclientes.ExecSQL;
+          end;
 end;
 
 procedure TFRMclientes.ExcluirClick(Sender: TObject);
@@ -107,7 +124,6 @@ begin
        DM.ZQclientes.ExecSQL;
        ShowMessage('Excluido com sucesso!');
        BTlimpar.Click;
-
   end;
 end;
 
@@ -118,28 +134,70 @@ end;
 
 procedure TFRMclientes.BTsairClick(Sender: TObject);
 begin
-  application.terminate;
-end;
+  if MessageDlg('QUER FINALIZAR O PROGRAMA?', mtConfirmation,[mbyes, mbno],0)= mryes then
+  begin
+       application.terminate;
+  end
+  else
+      ShowMessage('O Programa não foi terminado!');
+  end;
 
 procedure TFRMclientes.BTatualizarClick(Sender: TObject);
 begin
-      DM.ZQclientes.Close;
-      DM.ZQclientes.SQL.Clear;
-      DM.ZQclientes.SQL.Add('UPDATE cliente SET nome = :nome, endereco = :endereco, email = :email, telefone = :telefone WHERE codigo = :codigo');
-      DM.ZQclientes.ParamByName('nome').AsString := TDnome.Text;
-      DM.ZQclientes.ParamByName('endereco').AsString := TDendereco.Text;
-      DM.ZQclientes.ParamByName('email').AsString := TDemail.Text;
-      DM.ZQclientes.ParamByName('telefone').AsString := TDtelefone.Text;
-      DM.ZQclientes.ParamByName('codigo').AsInteger := StrToInt(EDTprocurar.Text);
-      DM.ZQclientes.ExecSQL;
+     if EDTprocurar.Text = '' then
+     begin
+          ShowMessage('É OBRIGATÓRIO INFORMAR O CÓDIGO');
+          EDTprocurar.SetFocus;
+          Exit;
+     end;
 
-      ShowMessage('Atualizado com sucesso!');
-      TDnome.Text := '';
-      TDendereco.Text := '';
-      TDemail.Text := '';
-      TDtelefone.Text := '';
-      EDTprocurar.Text := '';
+     if TDnome.Text = '' then
+     begin
+          ShowMessage('Informe o campo Nome!');
+          TDnome.SetFocus;
+          exit;
+     end;
 
+     if TDendereco.Text = '' then
+     begin
+          ShowMessage('Informe o campo Endereço!');
+          TDendereco.SetFocus;
+          exit;
+     end;
+
+     if TDemail.Text = '' then
+     begin
+          ShowMessage('Informe o campo Email!');
+          TDemail.SetFocus;
+          exit;
+     end;
+
+     if TDtelefone.Text = '' then
+     begin
+          ShowMessage('Informe o campo Telefone!');
+          TDtelefone.SetFocus;
+          exit;
+     end;
+
+     if MessageDlg('Desejá atualizar o cadastro?', mtconfirmation,[mbyes,mbno],0)= mryes then
+     begin
+          DM.ZQclientes.Close;
+          DM.ZQclientes.SQL.Clear;
+          DM.ZQclientes.SQL.Add('UPDATE cliente SET nome = :nome, endereco = :endereco, email = :email, telefone = :telefone WHERE codigo = :codigo');
+          DM.ZQclientes.ParamByName('nome').AsString := TDnome.Text;
+          DM.ZQclientes.ParamByName('endereco').AsString := TDendereco.Text;
+          DM.ZQclientes.ParamByName('email').AsString := TDemail.Text;
+          DM.ZQclientes.ParamByName('telefone').AsString := TDtelefone.Text;
+          DM.ZQclientes.ParamByName('codigo').AsInteger := StrToInt(EDTprocurar.Text);
+          DM.ZQclientes.ExecSQL;
+
+          ShowMessage('Atualizado com sucesso!');
+          TDnome.Text := '';
+          TDendereco.Text := '';
+          TDemail.Text := '';
+          TDtelefone.Text := '';
+          EDTprocurar.Text := '';
+     end;
 end;
 
 procedure TFRMclientes.BTprocurarClick(Sender: TObject);
