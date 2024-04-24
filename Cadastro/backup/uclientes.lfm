@@ -1,0 +1,178 @@
+object FRMclientes: TFRMclientes
+  Left = 730
+  Height = 338
+  Top = 157
+  Width = 593
+  Caption = 'Cadastro de Clientes'
+  ClientHeight = 338
+  ClientWidth = 593
+  LCLVersion = '3.2.0.0'
+  object titulo: TLabel
+    Left = 214
+    Height = 21
+    Top = 16
+    Width = 178
+    Caption = 'PREENCHA O CADASTRO'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -16
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+  end
+  object nome: TLabel
+    Left = 94
+    Height = 21
+    Top = 122
+    Width = 46
+    Caption = 'Nome:'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -16
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+  end
+  object TDnome: TEdit
+    Left = 166
+    Height = 23
+    Top = 120
+    Width = 304
+    TabOrder = 0
+  end
+  object endereco: TLabel
+    Left = 94
+    Height = 21
+    Top = 152
+    Width = 67
+    Caption = 'Endereço:'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -16
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+  end
+  object TDendereco: TEdit
+    Left = 166
+    Height = 23
+    Top = 150
+    Width = 304
+    TabOrder = 1
+  end
+  object email: TLabel
+    Left = 94
+    Height = 21
+    Top = 180
+    Width = 41
+    Caption = 'Email:'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -16
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+  end
+  object TDemail: TEdit
+    Left = 166
+    Height = 23
+    Top = 178
+    Width = 304
+    TabOrder = 2
+    OnChange = TDemailChange
+  end
+  object telefone: TLabel
+    Left = 94
+    Height = 21
+    Top = 212
+    Width = 60
+    Caption = 'Telefone:'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -16
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+  end
+  object TDtelefone: TEdit
+    Left = 166
+    Height = 23
+    Top = 210
+    Width = 304
+    TabOrder = 3
+  end
+  object confirmar: TButton
+    Left = 166
+    Height = 48
+    Top = 248
+    Width = 106
+    Caption = 'Confirmar'
+    TabOrder = 4
+    OnClick = confirmarClick
+  end
+  object BTsair: TButton
+    Left = 408
+    Height = 48
+    Top = 248
+    Width = 64
+    Caption = 'Sair'
+    TabOrder = 5
+    OnClick = BTsairClick
+  end
+  object Label1: TLabel
+    Left = 32
+    Height = 21
+    Top = 76
+    Width = 122
+    Caption = 'Informe o código:'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -16
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+  end
+  object TDprocurar: TEdit
+    Left = 166
+    Height = 23
+    Top = 72
+    Width = 106
+    TabOrder = 6
+  end
+  object BTprocurar: TButton
+    Left = 272
+    Height = 25
+    Top = 70
+    Width = 72
+    Caption = 'Procurar'
+    TabOrder = 7
+    OnClick = BTprocurarClick
+  end
+  object BTlimpar: TButton
+    Left = 344
+    Height = 49
+    Top = 247
+    Width = 64
+    Caption = 'Limpar'
+    TabOrder = 8
+    OnClick = BTlimparClick
+  end
+  object BTatualizar: TButton
+    Left = 272
+    Height = 49
+    Top = 247
+    Width = 72
+    Caption = 'Atualizar'
+    TabOrder = 9
+    OnClick = BTatualizarClick
+  end
+  object Excluir: TButton
+    Left = 408
+    Height = 25
+    Top = 70
+    Width = 56
+    Caption = 'Excluir'
+    Color = clRed
+    TabOrder = 10
+    OnClick = ExcluirClick
+  end
+  object DSclientes: TDataSource
+    DataSet = DM.ZQclientes
+    Left = 102
+    Top = 264
+  end
+end

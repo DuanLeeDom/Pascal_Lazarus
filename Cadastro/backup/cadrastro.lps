@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="12"/>
+    <BuildModes Active="Default"/>
+    <Units>
+      <Unit>
+        <Filename Value="cadrastro.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="8"/>
+        <CursorPos X="41" Y="25"/>
+        <UsageCount Value="50"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="uprincipal.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uPrincipal"/>
+        <CursorPos Y="9"/>
+        <UsageCount Value="50"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="udm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DM"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="uDM"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="11"/>
+        <CursorPos X="26" Y="17"/>
+        <ComponentState Value="1"/>
+        <UsageCount Value="50"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="uclientes.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FRMclientes"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="185"/>
+        <CursorPos X="100" Y="154"/>
+        <UsageCount Value="50"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\..\..\..\..\AppData\Local\lazarus\onlinepackagemanager\packages\zeosdbo\src\plain\ZPlainLoader.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="250"/>
+        <CursorPos Y="258"/>
+        <UsageCount Value="9"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\..\..\..\..\AppData\Local\lazarus\onlinepackagemanager\packages\zeosdbo\src\plain\ZPlainFirebird.pas"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="99" Y="1786"/>
+        <UsageCount Value="9"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\..\..\..\..\AppData\Local\lazarus\onlinepackagemanager\packages\zeosdbo\src\plain\ZPlainFirebirdInterbaseDriver.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1194"/>
+        <CursorPos Y="1200"/>
+        <UsageCount Value="9"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\..\..\..\..\AppData\Local\lazarus\onlinepackagemanager\packages\zeosdbo\src\plain\ZPlainMySqlDriver.pas"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="9"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\..\..\..\..\AppData\Local\lazarus\onlinepackagemanager\packages\zeosdbo\src\plain\ZPlainProxyDriverIntf.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="90"/>
+        <CursorPos Y="113"/>
+        <UsageCount Value="9"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\..\..\..\..\AppData\Local\lazarus\onlinepackagemanager\packages\zeosdbo\src\plain\ZPlainOleDBDriver.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1191"/>
+        <CursorPos Y="1200"/>
+        <UsageCount Value="9"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\..\..\..\..\AppData\Local\lazarus\onlinepackagemanager\packages\zeosdbo\src\plain\ZPlainODBCDriver.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1245"/>
+        <CursorPos Y="1200"/>
+        <UsageCount Value="9"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit>
+      <Unit>
+        <Filename Value="uprodutos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form2"/>
+        <ResourceBaseClass Value="Form"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="208"/>
+        <CursorPos X="28" Y="214"/>
+        <UsageCount Value="31"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\lazarus\lcl\stdctrls.pp"/>
+        <UnitName Value="StdCtrls"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1064"/>
+        <CursorPos X="14" Y="986"/>
+        <UsageCount Value="10"/>
+      </Unit>
+    </Units>
+    <JumpHistory HistoryIndex="29">
+      <Position>
+        <Filename Value="uprodutos.pas"/>
+        <Caret Line="51" Column="10" TopLine="109"/>
+      </Position>
+      <Position>
+        <Filename Value="uprodutos.pas"/>
+        <Caret Line="114" Column="48" TopLine="105"/>
+      </Position>
+      <Position>
+        <Filename Value="uprodutos.pas"/>
+        <Caret Line="118" Column="78" TopLine="110"/>
+      </Position>
+      <Position>
+        <Filename Value="uprodutos.pas"/>
+        <Caret Line="133" Column="39" TopLine="118"/>
+      </Position>
+      <Position>
+        <Filename Value="uprodutos.pas"/>
+        <Caret Line="136" Column="16" TopLine="122"/>
+      </Position>
+      <Position>
+        <Filename Value="uprodutos.pas"/>
+        <Caret Line="128" Column="69" TopLine="119"/>
+      </Position>
+      <Position>
+        <Filename Value="uprodutos.pas"/>
+        <Caret Line="134" Column="71" TopLine="118"/>
+      </Position>
+      <Position>
+        <Filename Value="uprodutos.pas"/>
+        <Caret Line="136" Column="71" TopLine="129"/>
+      </Position>
+      <Position>
+        <Filename Value="uprodutos.pas"/>
+        <Caret Line="149" Column="35" TopLine="132"/>
+      </Position>
+      <Position>
+        <Filename Value="uprodutos.pas"/>
+        <Caret Line="153" Column="17" TopLine="76"/>
+      </Position>
+      <Position>
+        <Filename Value="uprodutos.pas"/>
+        <Caret Line="152" TopLine="138"/>
+      </Position>
+      <Position>
+        <Filename Value="uprodutos.pas"/>
+        <Caret Line="156" Column="45" TopLine="139"/>
+      </Position>
+      <Position>
+        <Filename Value="uclientes.pas"/>
+        <Caret Line="113" Column="15" TopLine="202"/>
+      </Position>
+      <Position>
+        <Filename Value="uprodutos.pas"/>
+        <Caret Line="153" TopLine="139"/>
+      </Position>
+      <Position>
+        <Filename Value="uprodutos.pas"/>
+        <Caret Line="10" Column="18"/>
+      </Position>
+      <Position>
+        <Filename Value="uprodutos.pas"/>
+        <Caret Line="136" Column="42" TopLine="142"/>
+      </Position>
+      <Position>
+        <Filename Value="uprodutos.pas"/>
+        <Caret Line="149" Column="36" TopLine="136"/>
+      </Position>
+      <Position>
+        <Filename Value="uprodutos.pas"/>
+        <Caret Line="147" Column="22" TopLine="139"/>
+      </Position>
+      <Position>
+        <Filename Value="uprodutos.pas"/>
+        <Caret Line="145" Column="29" TopLine="139"/>
+      </Position>
+      <Position>
+        <Filename Value="uprodutos.pas"/>
+        <Caret Line="151" Column="39" TopLine="143"/>
+      </Position>
+      <Position>
+        <Filename Value="uprodutos.pas"/>
+        <Caret Line="153" Column="87" TopLine="142"/>
+      </Position>
+      <Position>
+        <Filename Value="uprodutos.pas"/>
+        <Caret Line="150" Column="99" TopLine="143"/>
+      </Position>
+      <Position>
+        <Filename Value="uprodutos.pas"/>
+        <Caret Line="142" Column="49" TopLine="142"/>
+      </Position>
+      <Position>
+        <Filename Value="udm.pas"/>
+        <Caret Line="23" Column="68" TopLine="11"/>
+      </Position>
+      <Position>
+        <Filename Value="udm.pas"/>
+        <Caret Line="24" Column="68" TopLine="11"/>
+      </Position>
+      <Position>
+        <Filename Value="uprodutos.pas"/>
+        <Caret Line="136" Column="42" TopLine="120"/>
+      </Position>
+      <Position>
+        <Filename Value="uprodutos.pas"/>
+        <Caret Line="211" Column="7" TopLine="196"/>
+      </Position>
+      <Position>
+        <Filename Value="uprodutos.pas"/>
+        <Caret Line="210" Column="93" TopLine="198"/>
+      </Position>
+      <Position>
+        <Filename Value="uprodutos.pas"/>
+        <Caret Line="252" Column="85" TopLine="241"/>
+      </Position>
+      <Position>
+        <Filename Value="uclientes.pas"/>
+        <Caret Line="226" Column="93" TopLine="216"/>
+      </Position>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>
