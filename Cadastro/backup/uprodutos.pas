@@ -5,7 +5,8 @@ unit uprodutos;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, MaskEdit,
+  ExtCtrls;
 
 type
 
@@ -17,28 +18,37 @@ type
     BTprocurar: TButton;
     BTatualizar: TButton;
     BTlimpar: TButton;
+    BTsair: TButton;
+    MaskEdit1: TMaskEdit;
     TLinformeocodigo: TLabel;
-    TDnome_1: TEdit;
+    TDnome: TEdit;
     TDcodigo_de_barras: TEdit;
-    TDnome_2: TEdit;
+    TDdescricao: TEdit;
     TDprocurar: TEdit;
     TDunidade: TEdit;
     TDvalor_de_compra: TEdit;
     TDmargem: TEdit;
     TDvalor_de_venda: TEdit;
     titulo: TLabel;
-    nome_1: TLabel;
+    nome: TLabel;
     codigodebarras: TLabel;
-    nome_2: TLabel;
+    descricao: TLabel;
     unidade: TLabel;
     valordecompra: TLabel;
     margem: TLabel;
     valordevenda: TLabel;
     procedure BTatualizarClick(Sender: TObject);
     procedure BTconfirmarClick(Sender: TObject);
+    procedure BTexcluirClick(Sender: TObject);
     procedure BTlimparClick(Sender: TObject);
     procedure BTprocurarClick(Sender: TObject);
+    procedure BTsairClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure MaskEdit1Change(Sender: TObject);
+    procedure TDmargemChange(Sender: TObject);
+    procedure TDmargemExit(Sender: TObject);
+    procedure TDvalor_de_compraChange(Sender: TObject);
+    procedure TDvalor_de_vendaChange(Sender: TObject);
   private
 
   public
@@ -61,17 +71,17 @@ var
   ultimoID: Integer;
 begin
 
-  if TDnome_1.Text = '' then
+  if TDnome.Text = '' then
   begin
     ShowMessage('Informe o campo Nome');
-    TDnome_1.SetFocus;
+    TDnome.SetFocus;
     Exit;
   end;
 
-  if TDnome_2.Text = '' then
+  if TDdescricao.Text = '' then
   begin
-    ShowMessage('Informe o campo Nome!');
-    TDnome_2.SetFocus;
+    ShowMessage('Informe o campo Descrição!');
+    TDdescricao.SetFocus;
     Exit;
   end;
 
@@ -125,17 +135,33 @@ begin
              DM.ZQprodutos.close;
              DM.ZQprodutos.close;
              DM.ZQprodutos.SQL.clear;
-             DM.ZQprodutos.SQL.Add('INSERT INTO PRODUTO (nome_1, codigo_de_barras, nome_2, unidade, valor_de_compra, margem, valor_de_venda)');
-             DM.ZQprodutos.SQL.Add('VALUES (:nome_1, :codigo_de_barras, :nome_2, :unidade, :valor_de_compra, :margem, :valor_de_venda)');
-             DM.ZQprodutos.ParamByName('nome_1').AsString := TDnome_1.Text;
-             DM.ZQprodutos.ParamByName('codigo_de_barras').AsString := TDcodigo_de_barras.Text;
-             DM.ZQprodutos.ParamByName('nome_2').AsString := TDnome_2.Text;
+             DM.ZQprodutos.SQL.Add('INSERT INTO PRODUTO (produto, descricao, unidade, margem, codigo_de_barras, valor_de_venda, valor_de_compra)');
+             DM.ZQprodutos.SQL.Add('VALUES (:produto, :descricao, :unidade, :margem, :codigo_de_barras, :valor_de_venda, :valor_de_compra)');
+             DM.ZQprodutos.ParamByName('produto').AsString := TDnome.Text;
+             DM.ZQprodutos.ParamByName('descricao').AsString := TDdescricao.Text;
              DM.ZQprodutos.ParamByName('unidade').AsString := TDunidade.Text;
-             DM.ZQprodutos.ParamByName('valor_de_compra').AsString := TDvalor_de_compra.Text;
              DM.ZQprodutos.ParamByName('margem').AsString := TDmargem.Text;
+             DM.ZQprodutos.ParamByName('codigo_de_barras').AsString := TDcodigo_de_barras.Text;
              DM.ZQprodutos.ParamByName('valor_de_venda').AsString := TDvalor_de_venda.Text;
+             DM.ZQprodutos.ParamByName('valor_de_compra').AsString := TDvalor_de_compra.Text;
              DM.ZQprodutos.ExecSQL;
        end;
+       BTlimpar.click
+  end;
+end;
+
+procedure TForm2.BTexcluirClick(Sender: TObject);
+begin
+  if MessageDlg('Desejá excluir o produto?', mtWarning, [mbyes,mbno],0)= mryes then
+  begin
+    DM.ZQprodutos.Close;
+    DM.ZQprodutos.SQL.Clear;
+    DM.ZQprodutos.SQL.Add('DELETE FROM produto WHERE codigo = :codigo');
+    DM.ZQprodutos.ParamByName('codigo').AsInteger := StrToInt(TDprocurar.Text);
+    DM.ZQprodutos.ExecSQL;
+
+    ShowMessage('Excluido com sucesso!');
+    BTlimpar.click
   end;
 end;
 
@@ -148,17 +174,17 @@ begin
     Exit;
   end;
 
-  if TDnome_1.Text = '' then
+  if TDnome.Text = '' then
   begin
     ShowMessage('Informe o campo Nome!');
-    TDnome_1.SetFocus;
+    TDnome.SetFocus;
     Exit;
   end;
 
-  if TDnome_2.Text = '' then
+  if TDdescricao.Text = '' then
   begin
-    ShowMessage('Informe o campo Nome!');
-    TDnome_2.SetFocus;
+    ShowMessage('Informe o campo Descrição!');
+    TDdescricao.SetFocus;
     Exit;
   end;
 
@@ -201,22 +227,27 @@ begin
   begin
     DM.ZQprodutos.Close;
     DM.ZQprodutos.SQL.Clear;
-    DM.ZQprodutos.SQL.Add('UPGRADE produto SET nome_1 = :nome_1, codigo_de_barras = :codigo_de_barras, nome_2 = :nome_2, unidade = :unidade, valor_de_compra = :valor_de_compra, margem = :margem, valor_de_venda = :valor_de_venda');
-    DM.ZQprodutos.ParamByName('nome_1').AsString := TDnome_1.Text;
-    DM.ZQprodutos.ParamByName('codigo_de_barras').AsString := TDcodigo_de_barras.Text;
-    DM.ZQprodutos.ParamByName('nome_2').AsString := TDnome_2.Text;
+    DM.ZQprodutos.SQL.Add('UPDATE produto SET produto = :produto, descricao = :descricao, unidade = :unidade, margem = :margem, codigo_de_barras = :codigo_de_barras, valor_de_venda = :valor_de_venda, valor_de_compra = :valor_de_compra, codigo = :codigo');
+    DM.ZQprodutos.ParamByName('produto').AsString := TDnome.Text;
+    DM.ZQprodutos.ParamByName('descricao').AsString := TDdescricao.Text;
     DM.ZQprodutos.ParamByName('unidade').AsString := TDunidade.Text;
-    DM.ZQprodutos.ParamByName('valor_de_compra').AsString := TDvalor_de_compra.Text;
     DM.ZQprodutos.ParamByName('margem').AsString := TDmargem.Text;
+    DM.ZQprodutos.ParamByName('codigo_de_barras').AsString := TDcodigo_de_barras.Text;
     DM.ZQprodutos.ParamByName('valor_de_venda').AsString := TDvalor_de_venda.Text;
+    DM.ZQprodutos.ParamByName('valor_de_compra').AsString := TDvalor_de_compra.Text;
+    DM.ZQprodutos.ParamByName('codigo').AsInteger := StrToInt(TDprocurar.Text);
+    DM.ZQprodutos.ExecSQL;
+
+    ShowMessage('Atualizado com sucesso!');
+    BTlimpar.click
   end;
 end;
 
 procedure TForm2.BTlimparClick(Sender: TObject);
 begin
      TDprocurar.Text := '';
-     TDnome_1.Text := '';
-     TDnome_2.Text := '';
+     TDnome.Text := '';
+     TDdescricao.Text := '';
      TDunidade.Text := '';
      TDmargem.Text := '';
      TDvalor_de_venda.Text := '';
@@ -233,29 +264,94 @@ begin
     TDprocurar.SetFocus;
     Exit;
   end;
+
   DM.ZQprodutos.close;
   DM.ZQprodutos.SQL.Clear;
   DM.ZQprodutos.SQL.Add('SELECT * FROM produto WHERE codigo = :codigo');
   DM.ZQprodutos.ParamByName('codigo').AsInteger := StrToInt(TDprocurar.Text);
   DM.ZQprodutos.Open;
+
   if DM.ZQprodutos.IsEmpty then
   begin
-    ShowMessage('Código de cliente não encontrado!');
+    ShowMessage('Código de produto não encontrado!');
     TDprocurar.SetFocus;
     Exit;
   end;
-  TDnome_1.Text := DM.ZQprodutos.FieldByName('nome_1').AsString;
-  TDcodigo_de_barras.Text := DM.ZQprodutos.FieldByName('codigo_de_barras').AsString;
-  TDnome_2.Text := DM.ZQprodutos.FieldByName('nome_2').AsString;
+
+  TDnome.Text := DM.ZQprodutos.FieldByName('produto').AsString;
+  TDdescricao.Text := DM.ZQprodutos.FieldByName('descricao').AsString;
   TDunidade.Text := DM.ZQprodutos.FieldByName('unidade').AsString;
-  TDvalor_de_compra.Text := DM.ZQprodutos.FieldByName('valor_de_compra').AsString;
   TDmargem.Text := DM.ZQprodutos.FieldByName('margem').AsString;
+  TDcodigo_de_barras.Text := DM.ZQprodutos.FieldByName('codigo_de_barras').AsString;
   TDvalor_de_venda.Text := DM.ZQprodutos.FieldByName('valor_de_venda').AsString;
-end;
+  TDvalor_de_compra.Text := DM.ZQprodutos.FieldByName('valor_de_compra').AsString;
+  end;
+
+procedure TForm2.BTsairClick(Sender: TObject);
+begin
+  if MessageDlg('QUER FINALIZAR O PROGRAMA?', mtWarning,[mbyes,mbno],0)= mryes then
+  begin
+    Application.Terminate;
+  end
+  else
+      ShowMessage('O programa não foi terminado!');
+  end;
 
 procedure TForm2.FormCreate(Sender: TObject);
 begin
 
+end;
+
+procedure TForm2.MaskEdit1Change(Sender: TObject);
+begin
+
+end;
+
+procedure TForm2.TDmargemChange(Sender: TObject);
+begin
+
+end;
+
+procedure TForm2.TDmargemExit(Sender: TObject);
+begin
+
+end;
+
+procedure TForm2.TDvalor_de_compraChange(Sender: TObject);
+var
+  Value: double;
+begin
+  // Remover caractere não numéricos do texto
+  TDvalor_de_compra.Text := StringReplace(TDvalor_de_compra.Text, 'R$', '', [rfReplaceAll]);
+  TDvalor_de_compra.Text := StringReplace(TDvalor_de_compra.Text, ',', '', [rfReplaceAll]);
+
+  // Tenta converter o texto para um valor Double
+  TDvalor_de_compra.Text := 'R$ ' + FormatFloat('#,##0.00', Value);
+
+  // Posicionar o cursor no final do texto
+  TDvalor_de_compra.SelStart := Length(TDvalor_de_compra.Text);
+end;
+
+procedure TForm2.TDvalor_de_vendaChange(Sender: TObject);
+var
+  resultado: Double;
+  porcentagem: Integer;
+  compra: Double;
+  vendad: Double;
+  lucro: Double;
+  quantidade: Double;
+
+begin
+  // Converter texto para números
+  compra := StrToFloatDef(TDvalor_de_compra.Text, 0.0);
+  lucro := StrToFloatDef(TDmargem.Text, 0.0);
+  quantidade := StrToFloatDef(TDunidade.Text, 1.0);
+
+  // Calcular o valor de venda com base na margem de lucro
+  resultado := compra + (compra * (lucro  / 100)) * quantidade;
+
+  // Atualizar o campo de texto do valor com o resultado
+  TDvalor_de_venda.Text := FloatToStr(resultado);
 end;
 
 end.

@@ -112,6 +112,7 @@ begin
               DM.ZQclientes.ParamByName('telefone').AsString := TDtelefone.Text;
               DM.ZQclientes.ExecSQL;
           end;
+          BTlimpar.click
      end;
 end;
 
@@ -136,7 +137,7 @@ end;
 
 procedure TFRMclientes.BTsairClick(Sender: TObject);
 begin
-  if MessageDlg('QUER FINALIZAR O PROGRAMA?', mtConfirmation,[mbyes, mbno],0)= mryes then
+  if MessageDlg('QUER FINALIZAR O PROGRAMA?', mtWarning,[mbyes, mbno],0)= mryes then
   begin
        application.terminate;
   end

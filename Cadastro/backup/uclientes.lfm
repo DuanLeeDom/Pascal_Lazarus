@@ -1,11 +1,11 @@
 object FRMclientes: TFRMclientes
-  Left = 730
+  Left = 713
   Height = 338
-  Top = 157
-  Width = 593
+  Top = 172
+  Width = 589
   Caption = 'Cadastro de Clientes'
   ClientHeight = 338
-  ClientWidth = 593
+  ClientWidth = 589
   LCLVersion = '3.2.0.0'
   object titulo: TLabel
     Left = 214
@@ -35,7 +35,7 @@ object FRMclientes: TFRMclientes
     Left = 166
     Height = 23
     Top = 120
-    Width = 304
+    Width = 306
     TabOrder = 0
   end
   object endereco: TLabel
@@ -54,7 +54,7 @@ object FRMclientes: TFRMclientes
     Left = 166
     Height = 23
     Top = 150
-    Width = 304
+    Width = 306
     TabOrder = 1
   end
   object email: TLabel
@@ -73,7 +73,7 @@ object FRMclientes: TFRMclientes
     Left = 166
     Height = 23
     Top = 178
-    Width = 304
+    Width = 306
     TabOrder = 2
     OnChange = TDemailChange
   end
@@ -93,7 +93,7 @@ object FRMclientes: TFRMclientes
     Left = 166
     Height = 23
     Top = 210
-    Width = 304
+    Width = 306
     TabOrder = 3
   end
   object confirmar: TButton
@@ -130,11 +130,11 @@ object FRMclientes: TFRMclientes
     Left = 166
     Height = 23
     Top = 72
-    Width = 106
+    Width = 150
     TabOrder = 6
   end
   object BTprocurar: TButton
-    Left = 272
+    Left = 320
     Height = 25
     Top = 70
     Width = 72
@@ -161,10 +161,10 @@ object FRMclientes: TFRMclientes
     OnClick = BTatualizarClick
   end
   object Excluir: TButton
-    Left = 408
+    Left = 400
     Height = 25
     Top = 70
-    Width = 56
+    Width = 72
     Caption = 'Excluir'
     Color = clRed
     TabOrder = 10

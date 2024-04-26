@@ -1,15 +1,15 @@
 object Form2: TForm2
-  Left = 846
-  Height = 357
-  Top = 183
-  Width = 428
+  Left = 911
+  Height = 400
+  Top = 120
+  Width = 400
   Caption = 'Cadastro de Produtos'
-  ClientHeight = 357
-  ClientWidth = 428
+  ClientHeight = 400
+  ClientWidth = 400
   OnCreate = FormCreate
   LCLVersion = '3.2.0.0'
   object titulo: TLabel
-    Left = 32
+    Left = 15
     Height = 21
     Top = 16
     Width = 365
@@ -20,17 +20,17 @@ object Form2: TForm2
     Font.Quality = fqDraft
     ParentFont = False
   end
-  object TDnome_1: TEdit
-    Left = 88
+  object TDnome: TEdit
+    Left = 145
     Height = 23
-    Top = 113
+    Top = 114
     Width = 120
     TabOrder = 0
   end
-  object nome_1: TLabel
-    Left = 24
+  object nome: TLabel
+    Left = 15
     Height = 21
-    Top = 115
+    Top = 116
     Width = 46
     Caption = 'Nome:'
     Font.CharSet = ANSI_CHARSET
@@ -40,37 +40,37 @@ object Form2: TForm2
     ParentFont = False
   end
   object TDcodigo_de_barras: TEdit
-    Left = 154
+    Left = 145
     Height = 23
-    Top = 226
-    Width = 160
+    Top = 210
+    Width = 170
     TabOrder = 1
   end
   object codigodebarras: TLabel
-    Left = 24
+    Left = 15
     Height = 21
-    Top = 226
-    Width = 119
-    Caption = 'Código de Barras'
+    Top = 212
+    Width = 122
+    Caption = 'Código de Barras:'
     Font.CharSet = ANSI_CHARSET
     Font.Height = -16
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
     ParentFont = False
   end
-  object TDnome_2: TEdit
-    Left = 280
+  object TDdescricao: TEdit
+    Left = 145
     Height = 23
-    Top = 113
+    Top = 146
     Width = 120
     TabOrder = 2
   end
-  object nome_2: TLabel
-    Left = 216
+  object descricao: TLabel
+    Left = 15
     Height = 21
-    Top = 113
-    Width = 46
-    Caption = 'Nome:'
+    Top = 148
+    Width = 70
+    Caption = 'Descrição:'
     Font.CharSet = ANSI_CHARSET
     Font.Height = -16
     Font.Pitch = fpVariable
@@ -78,16 +78,17 @@ object Form2: TForm2
     ParentFont = False
   end
   object TDunidade: TEdit
-    Left = 88
+    Left = 144
     Height = 23
-    Top = 145
+    Top = 178
     Width = 120
     TabOrder = 3
+    OnExit = TDvalor_de_vendaChange
   end
   object unidade: TLabel
-    Left = 24
+    Left = 15
     Height = 21
-    Top = 147
+    Top = 180
     Width = 61
     Caption = 'Unidade:'
     Font.CharSet = ANSI_CHARSET
@@ -97,16 +98,18 @@ object Form2: TForm2
     ParentFont = False
   end
   object TDvalor_de_compra: TEdit
-    Left = 154
+    Left = 145
     Height = 23
-    Top = 258
-    Width = 160
+    Top = 248
+    Width = 170
     TabOrder = 4
+    OnChange = TDvalor_de_compraChange
+    OnExit = TDvalor_de_vendaChange
   end
   object valordecompra: TLabel
-    Left = 26
+    Left = 15
     Height = 21
-    Top = 258
+    Top = 250
     Width = 117
     Caption = 'Valor de Compra'
     Font.CharSet = ANSI_CHARSET
@@ -116,16 +119,18 @@ object Form2: TForm2
     ParentFont = False
   end
   object TDmargem: TEdit
-    Left = 280
+    Left = 145
     Height = 23
-    Top = 145
-    Width = 120
+    Top = 278
+    Width = 170
     TabOrder = 5
+    OnChange = TDmargemChange
+    OnExit = TDvalor_de_vendaChange
   end
   object margem: TLabel
-    Left = 216
+    Left = 15
     Height = 21
-    Top = 145
+    Top = 280
     Width = 62
     Caption = 'Margem:'
     Font.CharSet = ANSI_CHARSET
@@ -135,16 +140,18 @@ object Form2: TForm2
     ParentFont = False
   end
   object TDvalor_de_venda: TEdit
-    Left = 154
+    Left = 145
     Height = 23
-    Top = 192
-    Width = 160
+    Top = 310
+    Width = 170
     TabOrder = 6
+    OnChange = TDvalor_de_vendaChange
+    OnEnter = TDmargemExit
   end
   object valordevenda: TLabel
-    Left = 24
+    Left = 15
     Height = 21
-    Top = 192
+    Top = 312
     Width = 107
     Caption = 'Valor de Venda:'
     Font.CharSet = ANSI_CHARSET
@@ -154,16 +161,16 @@ object Form2: TForm2
     ParentFont = False
   end
   object BTconfirmar: TButton
-    Left = 24
-    Height = 45
-    Top = 296
-    Width = 120
+    Left = 15
+    Height = 40
+    Top = 344
+    Width = 80
     Caption = 'Confirmar'
     TabOrder = 7
     OnClick = BTconfirmarClick
   end
   object TLinformeocodigo: TLabel
-    Left = 24
+    Left = 15
     Height = 21
     Top = 62
     Width = 122
@@ -175,14 +182,14 @@ object Form2: TForm2
     ParentFont = False
   end
   object TDprocurar: TEdit
-    Left = 154
+    Left = 145
     Height = 23
     Top = 60
     Width = 120
     TabOrder = 8
   end
   object BTprocurar: TButton
-    Left = 280
+    Left = 271
     Height = 25
     Top = 56
     Width = 72
@@ -191,29 +198,52 @@ object Form2: TForm2
     OnClick = BTprocurarClick
   end
   object BTlimpar: TButton
-    Left = 320
-    Height = 56
-    Top = 208
+    Left = 175
+    Height = 40
+    Top = 344
     Width = 80
     Caption = 'Limpar'
     TabOrder = 10
     OnClick = BTlimparClick
   end
   object BTatualizar: TButton
-    Left = 152
-    Height = 47
-    Top = 294
-    Width = 120
+    Left = 95
+    Height = 40
+    Top = 344
+    Width = 80
     Caption = 'Atualizar'
     TabOrder = 11
     OnClick = BTatualizarClick
   end
   object BTexcluir: TButton
-    Left = 280
-    Height = 47
-    Top = 294
-    Width = 120
+    Left = 271
+    Height = 25
+    Top = 88
+    Width = 72
     Caption = 'Excluir'
     TabOrder = 12
+    OnClick = BTexcluirClick
+  end
+  object BTsair: TButton
+    Left = 255
+    Height = 40
+    Top = 344
+    Width = 80
+    Caption = 'Sair'
+    TabOrder = 13
+    OnClick = BTsairClick
+  end
+  object MaskEdit1: TMaskEdit
+    Left = 280
+    Height = 23
+    Top = 168
+    Width = 80
+    EnableSets = False
+    MaxLength = 9
+    TabOrder = 14
+    OnChange = MaskEdit1Change
+    EditMask = 'R$ ###,##;1;0'
+    Text = 'R$    ,  '
+    SpaceChar = '0'
   end
 end
