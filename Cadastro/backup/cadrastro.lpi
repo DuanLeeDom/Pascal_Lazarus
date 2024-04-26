@@ -72,7 +72,7 @@
       <Unit>
         <Filename Value="uprodutos.pas"/>
         <IsPartOfProject Value="True"/>
-        <ComponentName Value="Form2"/>
+        <ComponentName Value="FRMprodutos"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
       </Unit>

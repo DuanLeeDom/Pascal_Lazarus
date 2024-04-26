@@ -1,4 +1,4 @@
-object Form2: TForm2
+object FRMprodutos: TFRMprodutos
   Left = 911
   Height = 400
   Top = 120
@@ -42,14 +42,14 @@ object Form2: TForm2
   object TDcodigo_de_barras: TEdit
     Left = 145
     Height = 23
-    Top = 210
+    Top = 215
     Width = 170
     TabOrder = 1
   end
   object codigodebarras: TLabel
     Left = 15
     Height = 21
-    Top = 212
+    Top = 217
     Width = 122
     Caption = 'Código de Barras:'
     Font.CharSet = ANSI_CHARSET
@@ -83,7 +83,6 @@ object Form2: TForm2
     Top = 178
     Width = 120
     TabOrder = 3
-    OnExit = TDvalor_de_vendaChange
   end
   object unidade: TLabel
     Left = 15
@@ -103,15 +102,13 @@ object Form2: TForm2
     Top = 248
     Width = 170
     TabOrder = 4
-    OnChange = TDvalor_de_compraChange
-    OnExit = TDvalor_de_vendaChange
   end
   object valordecompra: TLabel
     Left = 15
     Height = 21
     Top = 250
-    Width = 117
-    Caption = 'Valor de Compra'
+    Width = 120
+    Caption = 'Valor de Compra:'
     Font.CharSet = ANSI_CHARSET
     Font.Height = -16
     Font.Pitch = fpVariable
@@ -124,8 +121,7 @@ object Form2: TForm2
     Top = 278
     Width = 170
     TabOrder = 5
-    OnChange = TDmargemChange
-    OnExit = TDvalor_de_vendaChange
+    OnExit = TDmargemExit
   end
   object margem: TLabel
     Left = 15
@@ -145,8 +141,7 @@ object Form2: TForm2
     Top = 310
     Width = 170
     TabOrder = 6
-    OnChange = TDvalor_de_vendaChange
-    OnEnter = TDmargemExit
+    OnExit = TDvalor_de_vendaExit
   end
   object valordevenda: TLabel
     Left = 15
@@ -232,18 +227,5 @@ object Form2: TForm2
     Caption = 'Sair'
     TabOrder = 13
     OnClick = BTsairClick
-  end
-  object MaskEdit1: TMaskEdit
-    Left = 280
-    Height = 23
-    Top = 168
-    Width = 80
-    EnableSets = False
-    MaxLength = 9
-    TabOrder = 14
-    OnChange = MaskEdit1Change
-    EditMask = 'R$ ###,##;1;0'
-    Text = 'R$    ,  '
-    SpaceChar = '0'
   end
 end

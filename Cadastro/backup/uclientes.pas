@@ -98,6 +98,7 @@ begin
              begin
                   ultimoID := DM.ZQclientes.Fields[0].AsInteger;
                   ShowMessage('O último ID inserido foi: ' + IntToStr(ultimoID));
+                  BTlimpar.click
              end
              else
               ShowMessage('Não há IDs inseridos.');
@@ -112,13 +113,12 @@ begin
               DM.ZQclientes.ParamByName('telefone').AsString := TDtelefone.Text;
               DM.ZQclientes.ExecSQL;
           end;
-          BTlimpar.click
      end;
 end;
 
 procedure TFRMclientes.ExcluirClick(Sender: TObject);
 begin
-  if MessageDlg('Desejá excluir o registro?', mtconfirmation,[mbyes,mbno],0)= mryes then
+  if MessageDlg('Desejá excluir o registro?', mtWarning,[mbyes,mbno],0)= mryes then
   begin
        DM.ZQclientes.close;
        DM.ZQclientes.SQL.Clear;
@@ -137,12 +137,9 @@ end;
 
 procedure TFRMclientes.BTsairClick(Sender: TObject);
 begin
-  if MessageDlg('QUER FINALIZAR O PROGRAMA?', mtWarning,[mbyes, mbno],0)= mryes then
+  if MessageDlg('QUER FINALIZAR O PROGRAMA?', mtCustom, [mbyes, mbno],0)= mryes then
   begin
-       application.terminate;
-  end
-  else
-      ShowMessage('O Programa não foi terminado!');
+    Application.Terminate;
   end;
 
 procedure TFRMclientes.BTatualizarClick(Sender: TObject);

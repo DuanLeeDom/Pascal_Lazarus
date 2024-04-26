@@ -10,16 +10,15 @@ uses
 
 type
 
-  { TForm2 }
+  { TFRMprodutos }
 
-  TForm2 = class(TForm)
+  TFRMprodutos = class(TForm)
     BTexcluir: TButton;
     BTconfirmar: TButton;
     BTprocurar: TButton;
     BTatualizar: TButton;
     BTlimpar: TButton;
     BTsair: TButton;
-    MaskEdit1: TMaskEdit;
     TLinformeocodigo: TLabel;
     TDnome: TEdit;
     TDcodigo_de_barras: TEdit;
@@ -44,11 +43,10 @@ type
     procedure BTprocurarClick(Sender: TObject);
     procedure BTsairClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
-    procedure MaskEdit1Change(Sender: TObject);
-    procedure TDmargemChange(Sender: TObject);
+   // procedure TDmargemChange(Sender: TObject);
     procedure TDmargemExit(Sender: TObject);
-    procedure TDvalor_de_compraChange(Sender: TObject);
-    procedure TDvalor_de_vendaChange(Sender: TObject);
+    procedure TDvalor_de_vendaExit(Sender: TObject);
+    //procedure TDvalor_de_vendaChange(Sender: TObject);
   private
 
   public
@@ -56,7 +54,7 @@ type
   end;
 
 var
-  Form2: TForm2;
+  FRMprodutos: TFRMprodutos;
 
 implementation
 
@@ -64,9 +62,9 @@ implementation
 
 uses uDM;
 
-{ TForm2 }
+{ TFRMprodutos }
 
-procedure TForm2.BTconfirmarClick(Sender: TObject);
+procedure TFRMprodutos.BTconfirmarClick(Sender: TObject);
 var
   ultimoID: Integer;
 begin
@@ -130,7 +128,9 @@ begin
          begin
               ultimoID := DM.ZQprodutos.FieldByName('max_codigo').AsInteger;
               ShowMessage('O último ID inserido foi: ' + IntToStr(ultimoID));
-         end;
+              BTlimpar.click
+         end
+         else
              ShowMessage('Não há IDs inseridos.');
              DM.ZQprodutos.close;
              DM.ZQprodutos.close;
@@ -146,11 +146,10 @@ begin
              DM.ZQprodutos.ParamByName('valor_de_compra').AsString := TDvalor_de_compra.Text;
              DM.ZQprodutos.ExecSQL;
        end;
-       BTlimpar.click
   end;
 end;
 
-procedure TForm2.BTexcluirClick(Sender: TObject);
+procedure TFRMprodutos.BTexcluirClick(Sender: TObject);
 begin
   if MessageDlg('Desejá excluir o produto?', mtWarning, [mbyes,mbno],0)= mryes then
   begin
@@ -165,7 +164,7 @@ begin
   end;
 end;
 
-procedure TForm2.BTatualizarClick(Sender: TObject);
+procedure TFRMprodutos.BTatualizarClick(Sender: TObject);
 begin
   if TDprocurar.Text = '' then
   begin
@@ -243,7 +242,7 @@ begin
   end;
 end;
 
-procedure TForm2.BTlimparClick(Sender: TObject);
+procedure TFRMprodutos.BTlimparClick(Sender: TObject);
 begin
      TDprocurar.Text := '';
      TDnome.Text := '';
@@ -256,7 +255,7 @@ begin
 
 end;
 
-procedure TForm2.BTprocurarClick(Sender: TObject);
+procedure TFRMprodutos.BTprocurarClick(Sender: TObject);
 begin
   if TDprocurar.Text = '' then
   begin
@@ -287,72 +286,89 @@ begin
   TDvalor_de_compra.Text := DM.ZQprodutos.FieldByName('valor_de_compra').AsString;
   end;
 
-procedure TForm2.BTsairClick(Sender: TObject);
+procedure TFRMprodutos.BTsairClick(Sender: TObject);
 begin
-  if MessageDlg('QUER FINALIZAR O PROGRAMA?', mtWarning,[mbyes,mbno],0)= mryes then
+  if MessageDlg('QUER FINALIZAR O PROGRAMA?', mtCustom, [mbyes, mbno],0)= mryes then
   begin
     Application.Terminate;
   end
-  else
-      ShowMessage('O programa não foi terminado!');
+
   end;
 
-procedure TForm2.FormCreate(Sender: TObject);
+procedure TFRMprodutos.FormCreate(Sender: TObject);
 begin
 
 end;
 
-procedure TForm2.MaskEdit1Change(Sender: TObject);
-begin
+// SÓ PRECISA ARRUMAR A SAIDA DAS DUAS!
 
-end;
-
-procedure TForm2.TDmargemChange(Sender: TObject);
-begin
-
-end;
-
-procedure TForm2.TDmargemExit(Sender: TObject);
-begin
-
-end;
-
-procedure TForm2.TDvalor_de_compraChange(Sender: TObject);
-var
-  Value: double;
-begin
-  // Remover caractere não numéricos do texto
-  TDvalor_de_compra.Text := StringReplace(TDvalor_de_compra.Text, 'R$', '', [rfReplaceAll]);
-  TDvalor_de_compra.Text := StringReplace(TDvalor_de_compra.Text, ',', '', [rfReplaceAll]);
-
-  // Tenta converter o texto para um valor Double
-  TDvalor_de_compra.Text := 'R$ ' + FormatFloat('#,##0.00', Value);
-
-  // Posicionar o cursor no final do texto
-  TDvalor_de_compra.SelStart := Length(TDvalor_de_compra.Text);
-end;
-
-procedure TForm2.TDvalor_de_vendaChange(Sender: TObject);
+procedure TFRMprodutos.TDmargemExit(Sender: TObject);
 var
   resultado: Double;
-  porcentagem: Integer;
   compra: Double;
-  vendad: Double;
   lucro: Double;
-  quantidade: Double;
-
 begin
   // Converter texto para números
-  compra := StrToFloatDef(TDvalor_de_compra.Text, 0.0);
-  lucro := StrToFloatDef(TDmargem.Text, 0.0);
-  quantidade := StrToFloatDef(TDunidade.Text, 1.0);
+  compra := StrToFloat(TDvalor_de_compra.Text);
+  lucro := StrToFloat(TDmargem.Text);
 
   // Calcular o valor de venda com base na margem de lucro
-  resultado := compra + (compra * (lucro  / 100)) * quantidade;
+  resultado := compra + (compra * (lucro / 100));
 
   // Atualizar o campo de texto do valor com o resultado
-  TDvalor_de_venda.Text := FloatToStr(resultado);
+  TDvalor_de_venda.Text := IntegerToStr(resultado);
 end;
+
+procedure TFRMprodutos.TDvalor_de_vendaExit(Sender: TObject);
+var
+  resultado: Double;
+  compra: Double;
+  lucro: Double;
+begin
+  // Converter texto para números
+  compra := StrToFloat(TDvalor_de_compra.Text);
+  lucro := StrToFloat(TDmargem.Text); // Aqui deveria ser TDvalor_de_venda.Text
+
+  // Calcular o valor de venda com base na margem de lucro
+  resultado := StrToFloat(TDvalor_de_venda.Text);
+
+  // Atualizar o campo de texto do valor com o resultado
+  TDmargem.Text := FloatToStr(((resultado - compra) / compra) * 100);
+end;
+
+{procedure TFRMprodutos.TDmargemExit(Sender: TObject);
+var
+  resultado: Double;
+  compra: Double;
+  lucro: Double;
+begin
+  // Converter texto para números
+  compra := StrToFloat(TDvalor_de_compra.Text);
+  lucro := StrToFloat(TDmargem.Text);
+
+  // Calcular o valor de venda com base na margem de lucro
+  resultado := compra + (compra * (lucro / 100));
+
+  // Atualizar o campo de texto do valor com o resultado
+  TDvalor_de_venda.Text := FormatFloat('#,##0.00', resultado); // Formata como moeda
+end;}
+
+{procedure TFRMprodutos.TDvalor_de_vendaExit(Sender: TObject);
+var
+  resultado: Double;
+  compra: Double;
+  lucro: Double;
+begin
+  // Converter texto para números
+  compra := StrToFloat(TDvalor_de_compra.Text);
+  lucro := StrToFloat(TDmargem.Text); // Aqui deveria ser TDvalor_de_venda.Text
+
+  // Calcular o valor de venda com base na margem de lucro
+  resultado := StrToFloat(TDvalor_de_venda.Text);
+
+  // Atualizar o campo de texto do valor com o resultado
+  TDmargem.Text := FloatToStr(((resultado - compra) / compra) * 100);
+end;}
 
 end.
 
