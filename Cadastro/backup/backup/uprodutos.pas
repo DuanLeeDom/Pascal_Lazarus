@@ -214,7 +214,6 @@ begin
 
   if MessageDlg('Desejá atualizar o produto?', mtConfirmation,[mbyes,mbno],0)= mryes then
   begin
-    ShowMessage(TDnome.Text);
     DM.ZQprodutos.Close;
     DM.ZQprodutos.SQL.Clear;
     DM.ZQprodutos.SQL.Add('UPDATE produtos SET produto = :produto, descricao = :descricao, unidade = :unidade, margem = :margem, codigo_de_barras = :codigo_de_barras,');
@@ -297,37 +296,37 @@ procedure TFRMprodutos.TDmargemExit(Sender: TObject);
 var
   resultado: Double;
   compra: Double;
-  lucro: Double;
+  porcentagem: Double;
 begin
   if TDmargem.Text <> '' then
   begin
+     if TDvalor_de_compra.Text <> '' then
+     begin
+        // Converter texto para números
+        compra := StrToFloat(TDvalor_de_compra.Text);
+        porcentagem := StrToFloat(TDmargem.Text);
 
-    // DESCOBRIR VALOR DE VENDA
+        // Calcular o valor de venda com base na margem de lucro
+        resultado := compra + (compra * (porcentagem / 100));
 
-    // Converter texto para números
-    compra := StrToFloat(TDvalor_de_compra.Text);
-    lucro := StrToFloat(TDmargem.Text);
+        // Atualizar o campo de texto do valor com o resultado
+        TDvalor_de_venda.Text := FormatFloat('#,##0.00', resultado); // Formata como moeda
+      end
+      else
+          if TDmargem.Text = '' then
+          begin
+            ShowMessage('Por favor preencher a coluna Margem!');
+            TDmargem.SetFocus;
+            Exit;
+          end;
 
-    // Calcular o valor de venda com base na margem de lucro
-    resultado := compra + (compra * (lucro / 100));
-
-    // Atualizar o campo de texto do valor com o resultado
-    TDvalor_de_venda.Text := FormatFloat('#,##0.00', resultado); // Formata como moeda
-  end
-  else
-      if TDmargem.Text = '' then
-      begin
-        ShowMessage('Por favor preencher a coluna Margem!');
-        TDmargem.SetFocus;
-        Exit;
+          if TDvalor_de_compra.Text = '' then
+          begin
+            ShowMessage('Informe o campo Valor de Compra!');
+            TDvalor_de_compra.SetFocus;
+            Exit;
       end;
-
-      if TDvalor_de_compra.Text = '' then
-      begin
-        ShowMessage('Informe o campo Valor de Compra!');
-        TDvalor_de_compra.SetFocus;
-        Exit;
-      end;
+  end;
 end;
 
 // DESCOBRIR MARGEM
@@ -339,30 +338,27 @@ begin
 
   if TDvalor_de_venda.Text <> '' then
   begin
+       if TDvalor_de_compra.Text <> '' then
+       begin
+         // Converter texto para números
+         compra := StrToFloat(TDvalor_de_compra.Text);
+         venda := StrToFloat(TDvalor_de_venda.Text);
 
-    // DESCOBRIR MARGEM
-
-    // Converter texto para números
-    compra := StrToFloat(TDvalor_de_compra.Text);
-    venda := StrToFloat(TDvalor_de_venda.Text);
-
-    // Atualizar o campo de texto do valor com o resultado
-    TDmargem.Text := FloatToStr(((venda - compra) / compra) * 100);
-  end
+         // Atualizar o campo de texto do valor com o resultado
+         TDmargem.Text := FloatToStr(((venda - compra) / compra) * 100);
+       end
+       else
+         if TDvalor_de_compra.Text = '' then
+         begin
+          ShowMessage('Informe o campo Valor de Compra!');
+          TDvalor_de_compra.SetFocus;
+          Exit;
+         end
   else
-      if TDvalor_de_venda.Text = '' then
-      begin
-        ShowMessage('Por favor preencher a coluna Valor de Venda!');
-        TDvalor_de_venda.SetFocus;
-        Exit;
-      end;
-
-      if TDvalor_de_compra.Text = '' then
-      begin
-        ShowMessage('Informe o campo Valor de Compra!');
-        TDvalor_de_compra.SetFocus;
-        Exit;
-      end;
+      ShowMessage('Informe o campo Valor de Venda!');
+      TDvalor_de_venda.SetFocus;
+      Exit;
+  end;
 end;
 end.
 
