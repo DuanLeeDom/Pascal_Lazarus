@@ -43,11 +43,8 @@ type
     procedure BTprocurarClick(Sender: TObject);
     procedure BTsairClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
-    // procedure TDmargemChange(Sender: TObject);
     procedure TDmargemExit(Sender: TObject);
-    procedure TDvalor_de_vendaChange(Sender: TObject);
     procedure TDvalor_de_vendaExit(Sender: TObject);
-    // procedure TDvalor_de_vendaChange(Sender: TObject);
 
   private
 
@@ -67,8 +64,6 @@ uses uDM;
 { TFRMprodutos }
 
 procedure TFRMprodutos.BTconfirmarClick(Sender: TObject);
-var
-  ultimoID: Integer;
 begin
 
   if TDnome.Text = '' then
@@ -291,11 +286,13 @@ begin
   end
 end;
 
+
 procedure TFRMprodutos.FormCreate(Sender: TObject);
 begin
 
 end;
 
+// DESCOBRIR VALOR DE VENDA
 procedure TFRMprodutos.TDmargemExit(Sender: TObject);
 var
   resultado: Double;
@@ -333,11 +330,7 @@ begin
       end;
 end;
 
-procedure TFRMprodutos.TDvalor_de_vendaChange(Sender: TObject);
-begin
-
-end;
-
+// DESCOBRIR MARGEM
 procedure TFRMprodutos.TDvalor_de_vendaExit(Sender: TObject);
 var
   compra: Double;

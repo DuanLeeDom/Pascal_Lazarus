@@ -59,8 +59,9 @@
         <ResourceBaseClass Value="Form"/>
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="3"/>
-        <TopLine Value="331"/>
-        <CursorPos Y="84"/>
+        <TopLine Value="211"/>
+        <CursorPos X="37" Y="225"/>
+        <FoldState Value=" T3nU032 PiOi10S"/>
         <ExtraEditorCount Value="1"/>
         <ExtraEditor1>
           <EditorIndex Value="-1"/>
@@ -150,10 +151,6 @@
       </Unit>
     </Units>
     <JumpHistory HistoryIndex="29">
-      <Position>
-        <Filename Value="uprodutos.pas"/>
-        <Caret Line="224" Column="62" TopLine="219"/>
-      </Position>
       <Position>
         <Filename Value="uprodutos.pas"/>
         <Caret Line="162" TopLine="153"/>
@@ -269,6 +266,10 @@
       <Position>
         <Filename Value="uprodutos.pas"/>
         <Caret Line="338" Column="3" TopLine="335"/>
+      </Position>
+      <Position>
+        <Filename Value="uprodutos.pas"/>
+        <Caret Line="297" Column="24" TopLine="284"/>
       </Position>
     </JumpHistory>
     <RunParams>

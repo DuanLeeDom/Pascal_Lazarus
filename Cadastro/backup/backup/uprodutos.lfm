@@ -141,7 +141,6 @@ object FRMprodutos: TFRMprodutos
     Top = 310
     Width = 170
     TabOrder = 6
-    OnChange = TDvalor_de_vendaChange
     OnExit = TDvalor_de_vendaExit
   end
   object valordevenda: TLabel
