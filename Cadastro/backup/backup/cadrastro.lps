@@ -9,8 +9,9 @@
         <Filename Value="cadrastro.lpr"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
+        <TopLine Value="11"/>
         <CursorPos Y="18"/>
-        <UsageCount Value="70"/>
+        <UsageCount Value="78"/>
       </Unit>
       <Unit>
         <Filename Value="uprincipal.pas"/>
@@ -20,7 +21,7 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uPrincipal"/>
         <CursorPos Y="9"/>
-        <UsageCount Value="70"/>
+        <UsageCount Value="78"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -33,7 +34,7 @@
         <UnitName Value="uDM"/>
         <EditorIndex Value="1"/>
         <CursorPos X="25" Y="16"/>
-        <UsageCount Value="70"/>
+        <UsageCount Value="78"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -44,9 +45,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="2"/>
-        <TopLine Value="226"/>
-        <CursorPos Y="145"/>
-        <UsageCount Value="70"/>
+        <TopLine Value="100"/>
+        <CursorPos X="48" Y="216"/>
+        <UsageCount Value="78"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -58,9 +59,8 @@
         <ResourceBaseClass Value="Form"/>
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="3"/>
-        <TopLine Value="283"/>
-        <CursorPos Y="296"/>
-        <FoldState Value=" TLo30F3 Pi2i80p"/>
+        <TopLine Value="331"/>
+        <CursorPos Y="84"/>
         <ExtraEditorCount Value="1"/>
         <ExtraEditor1>
           <EditorIndex Value="-1"/>
@@ -68,7 +68,7 @@
           <TopLine Value="-1"/>
           <CursorPos X="-1" Y="-1"/>
         </ExtraEditor1>
-        <UsageCount Value="51"/>
+        <UsageCount Value="59"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -78,14 +78,12 @@
         <TopLine Value="250"/>
         <CursorPos Y="258"/>
         <UsageCount Value="7"/>
-        <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit>
       <Unit>
         <Filename Value="..\..\..\..\..\AppData\Local\lazarus\onlinepackagemanager\packages\zeosdbo\src\plain\ZPlainFirebird.pas"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="99" Y="1786"/>
         <UsageCount Value="7"/>
-        <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit>
       <Unit>
         <Filename Value="..\..\..\..\..\AppData\Local\lazarus\onlinepackagemanager\packages\zeosdbo\src\plain\ZPlainFirebirdInterbaseDriver.pas"/>
@@ -93,13 +91,11 @@
         <TopLine Value="1194"/>
         <CursorPos Y="1200"/>
         <UsageCount Value="7"/>
-        <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit>
       <Unit>
         <Filename Value="..\..\..\..\..\AppData\Local\lazarus\onlinepackagemanager\packages\zeosdbo\src\plain\ZPlainMySqlDriver.pas"/>
         <EditorIndex Value="-1"/>
         <UsageCount Value="7"/>
-        <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit>
       <Unit>
         <Filename Value="..\..\..\..\..\AppData\Local\lazarus\onlinepackagemanager\packages\zeosdbo\src\plain\ZPlainProxyDriverIntf.pas"/>
@@ -107,7 +103,6 @@
         <TopLine Value="90"/>
         <CursorPos Y="113"/>
         <UsageCount Value="7"/>
-        <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit>
       <Unit>
         <Filename Value="..\..\..\..\..\AppData\Local\lazarus\onlinepackagemanager\packages\zeosdbo\src\plain\ZPlainOleDBDriver.pas"/>
@@ -115,7 +110,6 @@
         <TopLine Value="1191"/>
         <CursorPos Y="1200"/>
         <UsageCount Value="7"/>
-        <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit>
       <Unit>
         <Filename Value="..\..\..\..\..\AppData\Local\lazarus\onlinepackagemanager\packages\zeosdbo\src\plain\ZPlainODBCDriver.pas"/>
@@ -123,7 +117,6 @@
         <TopLine Value="1245"/>
         <CursorPos Y="1200"/>
         <UsageCount Value="7"/>
-        <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit>
       <Unit>
         <Filename Value="C:\lazarus\lcl\stdctrls.pp"/>
@@ -147,127 +140,135 @@
         <CursorPos Y="582"/>
         <UsageCount Value="11"/>
       </Unit>
+      <Unit>
+        <Filename Value="C:\lazarus\lcl\include\control.inc"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="2976"/>
+        <CursorPos Y="2976"/>
+        <UsageCount Value="11"/>
+        <Loaded Value="True"/>
+      </Unit>
     </Units>
     <JumpHistory HistoryIndex="29">
       <Position>
         <Filename Value="uprodutos.pas"/>
-        <Caret Line="356" TopLine="345"/>
+        <Caret Line="224" Column="62" TopLine="219"/>
       </Position>
       <Position>
         <Filename Value="uprodutos.pas"/>
-        <Caret Line="359" TopLine="345"/>
+        <Caret Line="162" TopLine="153"/>
       </Position>
       <Position>
         <Filename Value="uprodutos.pas"/>
-        <Caret Line="352" TopLine="345"/>
+        <Caret Line="163" TopLine="153"/>
       </Position>
       <Position>
         <Filename Value="uprodutos.pas"/>
-        <Caret Line="353" TopLine="345"/>
+        <Caret Line="170" TopLine="155"/>
       </Position>
       <Position>
         <Filename Value="uprodutos.pas"/>
-        <Caret Line="356" TopLine="345"/>
+        <Caret Line="177" TopLine="169"/>
       </Position>
       <Position>
         <Filename Value="uprodutos.pas"/>
-        <Caret Line="359" TopLine="345"/>
+        <Caret Line="184" TopLine="170"/>
       </Position>
       <Position>
         <Filename Value="uprodutos.pas"/>
-        <Caret Line="353" Column="22" TopLine="345"/>
+        <Caret Line="191" TopLine="183"/>
       </Position>
       <Position>
         <Filename Value="uprodutos.pas"/>
-        <Caret Line="360" Column="6" TopLine="346"/>
+        <Caret Line="198" TopLine="184"/>
       </Position>
       <Position>
         <Filename Value="uprodutos.pas"/>
-        <Caret Line="333" Column="5" TopLine="322"/>
+        <Caret Line="205" TopLine="197"/>
       </Position>
       <Position>
         <Filename Value="uprodutos.pas"/>
-        <Caret Line="48" Column="27" TopLine="39"/>
+        <Caret Line="212" TopLine="198"/>
       </Position>
       <Position>
         <Filename Value="uprodutos.pas"/>
-        <Caret Line="310" Column="32" TopLine="305"/>
+        <Caret Line="219" TopLine="211"/>
       </Position>
       <Position>
         <Filename Value="uprodutos.pas"/>
-        <Caret Line="343" Column="3" TopLine="343"/>
+        <Caret Line="221" TopLine="211"/>
       </Position>
       <Position>
         <Filename Value="uprodutos.pas"/>
-        <Caret Line="355" Column="41" TopLine="345"/>
+        <Caret Line="222" TopLine="211"/>
       </Position>
       <Position>
         <Filename Value="uprodutos.pas"/>
-        <Caret Line="337" Column="39" TopLine="335"/>
+        <Caret Line="223" TopLine="211"/>
       </Position>
       <Position>
         <Filename Value="uprodutos.pas"/>
-        <Caret Line="350" Column="16" TopLine="336"/>
+        <Caret Line="224" TopLine="211"/>
       </Position>
       <Position>
         <Filename Value="uprodutos.pas"/>
-        <Caret Line="341" Column="3" TopLine="331"/>
+        <Caret Line="225" TopLine="211"/>
       </Position>
       <Position>
         <Filename Value="uprodutos.pas"/>
-        <Caret Line="346" Column="26" TopLine="329"/>
+        <Caret Line="226" TopLine="212"/>
       </Position>
       <Position>
         <Filename Value="uprodutos.pas"/>
-        <Caret Line="343" Column="5" TopLine="334"/>
+        <Caret Line="227" TopLine="213"/>
       </Position>
       <Position>
         <Filename Value="uprodutos.pas"/>
-        <Caret Line="352" Column="25" TopLine="336"/>
+        <Caret Line="228" TopLine="214"/>
       </Position>
       <Position>
         <Filename Value="uprodutos.pas"/>
-        <Caret Line="306" Column="59" TopLine="292"/>
+        <Caret Line="229" TopLine="215"/>
       </Position>
       <Position>
         <Filename Value="uprodutos.pas"/>
-        <Caret Line="328" Column="24" TopLine="319"/>
+        <Caret Line="230" TopLine="216"/>
       </Position>
       <Position>
         <Filename Value="uprodutos.pas"/>
-        <Caret Line="48" Column="45" TopLine="41"/>
+        <Caret Line="231" TopLine="217"/>
       </Position>
       <Position>
         <Filename Value="uprodutos.pas"/>
-        <Caret Line="346" Column="79" TopLine="289"/>
+        <Caret Line="232" TopLine="218"/>
       </Position>
       <Position>
         <Filename Value="uprodutos.pas"/>
-        <Caret Line="317" Column="79" TopLine="303"/>
+        <Caret Line="233" TopLine="219"/>
       </Position>
       <Position>
         <Filename Value="uprodutos.pas"/>
-        <Caret Line="319" Column="28" TopLine="304"/>
+        <Caret Line="234" TopLine="220"/>
       </Position>
       <Position>
         <Filename Value="uprodutos.pas"/>
-        <Caret Line="305" Column="87" TopLine="295"/>
+        <Caret Line="236" TopLine="222"/>
       </Position>
       <Position>
         <Filename Value="uprodutos.pas"/>
-        <Caret Line="319" Column="40" TopLine="311"/>
+        <Caret Line="224" Column="48" TopLine="259"/>
       </Position>
       <Position>
         <Filename Value="uprodutos.pas"/>
-        <Caret Line="305" Column="2" TopLine="297"/>
+        <Caret Line="335" Column="2" TopLine="329"/>
       </Position>
       <Position>
-        <Filename Value="uclientes.pas"/>
-        <Caret Line="145" TopLine="136"/>
+        <Filename Value="uprodutos.pas"/>
+        <Caret Line="48" Column="55" TopLine="40"/>
       </Position>
       <Position>
-        <Filename Value="udm.pas"/>
-        <Caret Line="17" Column="25"/>
+        <Filename Value="uprodutos.pas"/>
+        <Caret Line="338" Column="3" TopLine="335"/>
       </Position>
     </JumpHistory>
     <RunParams>
