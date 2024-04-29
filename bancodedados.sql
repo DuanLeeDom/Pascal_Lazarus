@@ -1,0 +1,17 @@
+INSERT INTO `cliente` (`codigo`, `nome`, `endereco`, `email`, `telefone`) VALUES (1, 'Antonio', 'Rua Domingos', 'Antonio@gmail.com', '(11) 53323-7152');
+INSERT INTO `cliente` (`codigo`, `nome`, `endereco`, `email`, `telefone`) VALUES (2, 'Daniela NatÃƒÂ¡lia Priscila Rezende', 'Rua Serra JapuÃƒÂ­ra', 'daniela.natalia.rezende@sabereler.com.br', '(43) 2621-9759');
+INSERT INTO `cliente` (`codigo`, `nome`, `endereco`, `email`, `telefone`) VALUES (3, 'Lucas Pedro', 'Rua joneles', 'lucaspedro@gmail.com', '(11) 63342-2569');
+INSERT INTO `cliente` (`codigo`, `nome`, `endereco`, `email`, `telefone`) VALUES (4, 'Guilherme Caleb Novaes', 'Rua Acesita', 'guilherme_novaes@diebold.com', '(27) 2581-2705');
+INSERT INTO `cliente` (`codigo`, `nome`, `endereco`, `email`, `telefone`) VALUES (5, 'Giovanna Rosa AssunÃ§Ã£o', 'Rua Eduardo Hugo Lins Guerra', 'giovanna-assuncao98@emerson.com', '(83) 2988-1945');
+INSERT INTO `cliente` (`codigo`, `nome`, `endereco`, `email`, `telefone`) VALUES (6, 'Diego Bruno Francisco Brito', 'Rua Passos Cabral', 'diego_bruno_brito@cielo.com.br', '(79) 3553-3321');
+INSERT INTO `cliente` (`codigo`, `nome`, `endereco`, `email`, `telefone`) VALUES (7, 'Ana Rafaela Kamilly Bernardes', 'Quadra Quadra 6', 'ana_rafaela_bernardes@vipsaude.com.br', '(61) 3608-7666');
+INSERT INTO `cliente` (`codigo`, `nome`, `endereco`, `email`, `telefone`) VALUES (8, 'Geraldo Caleb da Mata', 'Alameda AntÃ´nio Ferreira de Jusus', 'geraldocalebdamata@gmeil.com', '(96) 2517-6126');
+INSERT INTO `cliente` (`codigo`, `nome`, `endereco`, `email`, `telefone`) VALUES (9, 'Isabel Stefany Vera Nunes', 'Rua Serra da Canastra', 'isabel_nunes@oliveiracontabil.com.br', '(31) 2749-7513');
+INSERT INTO `cliente` (`codigo`, `nome`, `endereco`, `email`, `telefone`) VALUES (10, 'Carolina Clara da Rocha', 'Rua GuatambÃº', 'carolina_clara_darocha@uel.br', '(11) 2950-8233');
+INSERT INTO `cliente` (`codigo`, `nome`, `endereco`, `email`, `telefone`) VALUES (11, 'Paulo Dom', 'Rua avenida', 'paulodom@hotmail.com', '(11) 99815-4199');
+INSERT INTO `cliente` (`codigo`, `nome`, `endereco`, `email`, `telefone`) VALUES (12, 'Claudia Aparecida da Silva', 'rua placidio covaleiro', 'claudias.aparecida@gmail.com', '(11) 87425-4899');
+INSERT INTO `cliente` (`codigo`, `nome`, `endereco`, `email`, `telefone`) VALUES (13, 'Patrick Dom da Silva', 'Rua palmeiras', 'patrick@hotmail.com', '(24) 48535-0945');
+INSERT INTO `cliente` (`codigo`, `nome`, `endereco`, `email`, `telefone`) VALUES (14, 'Ian Nicolas Assis', 'Rua LÃ³tus', 'ian.nicolas.assis@mavex.com.br', '(69) 2697-6932');
+INSERT INTO `cliente` (`codigo`, `nome`, `endereco`, `email`, `telefone`) VALUES (15, 'Enzo Alexandre Almeida', 'Rua Murupi', 'enzoalexandrealmeida@texfuse.com.br', '(68) 3685-8150');
+INSERT INTO `cliente` (`codigo`, `nome`, `endereco`, `email`, `telefone`) VALUES (16, 'Bruna PatrÃ­cia Sabrina Barbosa', 'Travessa da Saudade', 'bruna.patricia.barbosa@unicohost.com.br', '(81) 2585-6619');
+INSERT INTO `cliente` (`codigo`, `nome`, `endereco`, `email`, `telefone`) VALUES (17, 'Andre Paulo da Conceicao', 'Rua Roberto Morais', 'andre_daconceicao@superig.com.br', '(79) 2843-8296');
