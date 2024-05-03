@@ -1,0 +1,36 @@
+object DM: TDM
+  Left = 896
+  Height = 240
+  Top = 202
+  Width = 320
+  Caption = 'Conexão'
+  LCLVersion = '3.2.0.0'
+  object ZConnection: TZConnection
+    ControlsCodePage = cCP_UTF8
+    Properties.Strings = (
+      'RawStringEncoding=DB_CP'
+    )
+    DisableSavepoints = False
+    HostName = 'localhost'
+    Port = 0
+    Database = 'banco_de_dados'
+    User = 'root'
+    Password = '00000'
+    Protocol = 'mysql'
+    LibraryLocation = 'C:\dll\libmysql.dll'
+    Left = 40
+    Top = 16
+  end
+  object ZQcabecalho: TZQuery
+    Connection = ZConnection
+    Params = <>
+    Left = 144
+    Top = 16
+  end
+  object ZQpedidos: TZQuery
+    Connection = ZConnection
+    Params = <>
+    Left = 240
+    Top = 16
+  end
+end
