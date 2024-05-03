@@ -1,10 +1,10 @@
 object FRMprincipal: TFRMprincipal
-  Left = 582
-  Height = 535
-  Top = 119
+  Left = 589
+  Height = 500
+  Top = 124
   Width = 738
   Caption = 'FRMprincipal'
-  ClientHeight = 535
+  ClientHeight = 500
   ClientWidth = 738
   OnCreate = FormCreate
   LCLVersion = '3.2.0.0'
@@ -110,7 +110,7 @@ object FRMprincipal: TFRMprincipal
     ParentFont = False
   end
   object TEdesconto: TEdit
-    Left = 378
+    Left = 376
     Height = 23
     Top = 96
     Width = 115
@@ -129,7 +129,7 @@ object FRMprincipal: TFRMprincipal
   object BTconfirmacao_cadastro: TButton
     Left = 563
     Height = 50
-    Top = 456
+    Top = 406
     Width = 100
     Caption = 'Novo Cadastro'
     TabOrder = 4
@@ -162,7 +162,7 @@ object FRMprincipal: TFRMprincipal
   object TEtotal_1: TEdit
     Left = 82
     Height = 45
-    Top = 464
+    Top = 411
     Width = 250
     Font.CharSet = ANSI_CHARSET
     Font.Height = -27
@@ -176,7 +176,7 @@ object FRMprincipal: TFRMprincipal
   object TEdesconto_1: TEdit
     Left = 82
     Height = 45
-    Top = 413
+    Top = 360
     Width = 70
     Font.CharSet = ANSI_CHARSET
     Font.Height = -27
@@ -326,9 +326,9 @@ object FRMprincipal: TFRMprincipal
     TabOrder = 13
   end
   object BTlimpar: TButton
-    Left = 334
+    Left = 336
     Height = 50
-    Top = 459
+    Top = 406
     Width = 100
     Caption = 'Limpar Cadastro'
     TabOrder = 14
@@ -355,9 +355,9 @@ object FRMprincipal: TFRMprincipal
   end
   object BTadicionar: TButton
     Left = 563
-    Height = 25
-    Top = 360
-    Width = 75
+    Height = 50
+    Top = 355
+    Width = 100
     Caption = 'Adicionar'
     TabOrder = 16
     OnClick = BTadicionarClick

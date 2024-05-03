@@ -54,9 +54,11 @@ type
     procedure BTconfirmacao_cadastroClick(Sender: TObject);
     procedure BTconfirmacao_produtoClick(Sender: TObject);
     procedure BTlimparClick(Sender: TObject);
+    //procedure DSitensDataChange(Sender: TObject; Field: TField);
     procedure FormCreate(Sender: TObject);
     procedure TEcodigodoprodutoExit(Sender: TObject);
     procedure TEdescontoExit(Sender: TObject);
+    //procedure TEdescontoExit(Sender: TObject);
     procedure TEquantidadeExit(Sender: TObject);
     procedure TEsubtotalExit(Sender: TObject);
     procedure TEtotalprincipalChange(Sender: TObject);
@@ -174,9 +176,9 @@ begin
   RXitensnome_produto.AsString := TEnome_do_produto.Text;
   RXitensquantidade.AsFloat := StrToFloat(TEquantidade.Text);
   RXitensvalor_unitario.AsFloat := StrToFloat(TEvalordeunitario.Text);
-  RXitensvalor_total.AsFloat := StrToFloat(TEvalortotal.Text);
+  RXitensvalor_total.AsFloat := StrToFloat(StringReplace(TEvalortotal.Text, '.', '', [rfReplaceAll]));
   RXitens.Post;
-
+  //TEtotalprincipal.Text := stringreplace(FormatFloat('###,##0.00', resultado), '.', '', [rfReplaceAll]);
   TEcodigodoproduto.Clear;
   TEnome_do_produto.Clear;
   TEquantidade.Clear;
@@ -194,6 +196,7 @@ begin
   TEsubtotal.Text := FormatFloat('#,##0.00', total);
 
   TEcodigodoproduto.SetFocus;
+  Exit;
 end;
 
 procedure TFRMprincipal.BTlimparClick(Sender: TObject);
@@ -236,30 +239,73 @@ begin
           TEvalordeunitario.Text := FloatToStr(ZQpedidos.FieldByName('valor_de_venda').Asfloat);
       end;
   end;
-
 end;
 
+
 // SAIR E REALIZAR O TOTAL
+
 procedure TFRMprincipal.TEdescontoExit(Sender: TObject);
+var
+  resultado: Double;
+  subtotal: Double;
+  porcentagem: Double;
+  porcentagem_convertida: Double;
+  ResultadoFormatado: string;
+begin
+  if TEsubtotal.Text = '' then
+  begin
+    ShowMessage('Informar o campo Subtotal!');
+    TEsubtotal.SetFocus;
+    Exit;
+  end;
+
+  if TEdesconto.Text = '' then
+  begin
+    ShowMessage('Informar o Campo Desconto!');
+    TEdesconto.SetFocus;
+    Exit;
+  end;
+  // Atribuição dos valores
+  subtotal := StrToFloat(StringReplace(TEsubtotal.Text, '.', '', [rfReplaceAll]));
+  porcentagem := StrToFloat(TEdesconto.Text);
+
+  // Converter a porcentagem
+  porcentagem_convertida := porcentagem / 100;
+  resultado := subtotal - (subtotal * porcentagem_convertida);
+
+  // Exibir o valor total formatado
+  ResultadoFormatado := FormatFloat('R$ #,##0.00', resultado);
+  TEtotalprincipal.Text := FloatToStr(resultado);
+  TEtotal_1.Text := FormatFloat('R$ #,##0.00', resultado);
+
+  // Exemplo de formatação do desconto
+  TEdesconto_1.Text := FormatFloat('###,0%', porcentagem);
+end;
+
+{procedure TFRMprincipal.TEdescontoExit(Sender: TObject);
 var
   resultado: double;
   subtotal: double;
   porcentagem: double;
   porcentagem_convertida: double;
+  Total: Double;
+  ResultadoFormatado: string;
 begin
-
-  if TEdesconto.Text = '' then
+  if TEsubtotal.Text = '' then
   begin
-    ShowMessage('Informar o campo Desconto!');
-    TEdesconto.SetFocus;
+    ShowMessage('Informar o campo Cód Produto!');
+    TEcodigodoproduto.SetFocus;
     Exit;
   end;
 
-  if TEsubtotal.Text = '' then
+  if TEsubtotal.Text <> '' then
   begin
-    ShowMessage('Informar o campo Sub Total!');
-    TEsubtotal.SetFocus;
-    Exit;
+    if TEdesconto.Text = '' then
+    begin
+      ShowMessage('Informar o Campo Desconto!');
+      TEdesconto.SetFocus;
+      Exit;
+    end;
   end;
 
   // Atribuição dos valores
@@ -267,20 +313,20 @@ begin
   porcentagem := StrToFloat(TEdesconto.Text);
 
   // Converter a porcentagem
-
   porcentagem_convertida := porcentagem / 100;
-
   resultado := subtotal - (subtotal * porcentagem_convertida);
 
-
-
   // Mandar para caixa de saída
+  // Formatar o resultado substituindo o ponto decimal por vírgula
+  ResultadoFormatado := StringReplace(FloatToStr(Total), '.', ',', [rfReplaceAll]);
 
+  // Exibir o valor total formatado
+  TEvalortotal.Text := ResultadoFormatado;
 
-  TEtotalprincipal.Text := stringreplace(FormatFloat('###,##0.00', resultado), '.', '', [rfReplaceAll]);
-  TEtotal_1.Text := FormatFloat('R$ #,##0.00', resultado);
+  // Exemplo de formatação do valor total e do desconto
+  TEtotal_1.Text := FormatFloat('R$ #,##0.00', Total);
   TEdesconto_1.Text := FormatFloat('###,0%', porcentagem);
-end;
+end;}
 
 procedure TFRMprincipal.TEquantidadeExit(Sender: TObject);
 var
@@ -310,22 +356,19 @@ var
   total: double;
   porcentagem_convertida: double;
 begin
-  if (TEdesconto.Text = '') and (TEtotalprincipal.Text = '') then
+  if ((TEdesconto.Text = '') and (TEtotalprincipal.Text = '')) and (TEcodigodoproduto.Text = '') then
   begin
-       ShowMessage('Informar pelo menos um campo!');
+       ShowMessage('Informar o campo Cód Produto!');
+       TEcodigodoproduto.SetFocus;
        Exit;
   end;
-
   if (TEdesconto.Text = '') and (TEtotalprincipal.Text <> '') then
   begin
        // Atribuição dos valores
        subtotal := StrToFloat(TEsubtotal.Text);
        porcentagem := StrToFloat(TEdesconto.Text);
-
        // Converter a porcentagem
-
        porcentagem_convertida := porcentagem / 100;
-
        resultado := subtotal - (subtotal * porcentagem_convertida);
   end
   else
@@ -333,16 +376,13 @@ begin
       // Colocar nas variaveis
       subtotal := StrToFloat(TEsubtotal.Text);
       total := StrToFloat(TEtotalprincipal.Text);
-
       // Calcular a Porcentagem de desconto
       porcentagem := ((subtotal - total) / subtotal) * 100;
-
       // Mandar para caixa de saída
       TEdesconto.Text := FormatFloat('###,0', porcentagem);
       TEdesconto_1.Text := FormatFloat('###,0%', porcentagem);
   end;
 end;
-
 
 procedure TFRMprincipal.TEtotalprincipalChange(Sender: TObject);
 begin
@@ -355,15 +395,14 @@ var
   porcentagem: double;
   total: double;
 begin
-
   // Verificação se está preenchido o campo Sub Total!
   if TEsubtotal.Text = '' then
   begin
-    ShowMessage('Informar o campo Sub Total!');
-    TEsubtotal.SetFocus;
+    ShowMessage('Informar o campo Cód Produto!');
+    TEcodigodoproduto.SetFocus;
     Exit;
   end;
-
+{
   // Colocar nas variaveis
   subtotal := StrToFloat(TEsubtotal.Text);
   total := StrToFloat(TEtotalprincipal.Text);
@@ -374,7 +413,7 @@ begin
   // Mandar para caixa de saída
   TEdesconto.Text := FormatFloat('###,0', porcentagem);
   TEdesconto_1.Text := FormatFloat('###,0%', porcentagem);
-
+}
 end;
 
 procedure TFRMprincipal.Timer1Timer(Sender: TObject);
