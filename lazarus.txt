@@ -1,0 +1,7 @@
+AnchorDocking 1.0
+AnchorDockingDsgn 1.0
+dockedformeditor 0.0
+
+lazarus plugins
+
+https://youtu.be/khovw0YYG3E?si=Hb_Pq_qTDZbPZkD8
